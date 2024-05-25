@@ -6,9 +6,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 5;
 
-    [SerializeField] float horizontal;
-    [SerializeField] float vertical;
-
     public static float direction;
 
     //public Animator animator;
@@ -26,11 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-
-        body.velocity = new Vector2(horizontal * speed, vertical * speed);
-
         /*
 
         if (horizontal != 0)
