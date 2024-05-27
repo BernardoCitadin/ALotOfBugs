@@ -40,8 +40,9 @@ public class GunManager : MonoBehaviour
     {
         var pos = gunPositions[spawnedGuns];
 
-        var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity); 
-        
+        var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity);
+        newGun.transform.SetParent(player);
+
         newGun.GetComponent<Gun>().SetOffset(pos);
         spawnedGuns++;
     }

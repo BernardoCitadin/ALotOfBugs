@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform muzzlePosition;
     [SerializeField] GameObject projectile;
     [SerializeField] Transform player;
+    [SerializeField] Transform bullets;
 
     [Header("Config")]
     [SerializeField] float fireDistance = 10f;
@@ -25,8 +26,10 @@ public class Gun : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        bullets = GameObject.FindGameObjectWithTag("Bullets").transform;
         anim = GetComponent<Animator>();
         lastShotTime = fireRate;
+        print(bullets.name);
     }
 
     void Update()
@@ -98,7 +101,7 @@ public class Gun : MonoBehaviour
         muzzleGo.transform.SetParent(transform);
         Destroy(muzzleGo, 0.05f);
 
-        var projectileGo = Instantiate(projectile, muzzlePosition.position, transform.rotation);
+        var projectileGo = Instantiate(projectile, muzzlePosition.position, transform.rotation, bullets);
         Destroy(projectileGo, 3);
     }
     

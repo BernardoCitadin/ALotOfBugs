@@ -68,14 +68,12 @@ public class PlayerStats : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            print(collision.gameObject);
             life -= collision.gameObject.GetComponent<Enemy>().damage;
             HUD.instance.SetLife();
             if (life <= 0)
             {
                 gameObject.SetActive(false);
             }
-            print(life);
         }
     }
 
