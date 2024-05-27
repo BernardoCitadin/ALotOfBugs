@@ -22,8 +22,8 @@ public class XP : MonoBehaviour
         switch (collision.tag)
         {
             case "Player":
-                Destroy(gameObject);
                 PlayerStats.GainXp(xpgain);
+                Destroy(gameObject);
                 break;
             case "Magnetic":
                 PlayerMovement.posPlayer = collision.transform;

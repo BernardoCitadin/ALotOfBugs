@@ -3,11 +3,9 @@ using UnityEngine.Events;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static HUD instance;
-
     public static PlayerStats Instance;
     public static int nivel = 1;
-    public static int xp, xpToNextLevel = 5;
+    public static int xp = 0, xpToNextLevel = 5;
 
     public int xpIncrease = 10, lifeMax = 100;
     public static int luck;
@@ -70,13 +68,14 @@ public class PlayerStats : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            print(collision.gameObject);
             life -= collision.gameObject.GetComponent<Enemy>().damage;
             HUD.instance.SetLife();
-
             if (life <= 0)
             {
                 gameObject.SetActive(false);
             }
+            print(life);
         }
     }
 

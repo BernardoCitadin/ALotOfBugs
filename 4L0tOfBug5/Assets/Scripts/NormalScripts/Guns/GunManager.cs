@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunManager : MonoBehaviour
 {
-    [SerializeField] GameObject gunPrefab;
+    [SerializeField] GameObject[] gunPrefabs;
     [SerializeField] Transform player;
 
     List<Vector2> gunPositions = new List<Vector2>();
@@ -24,23 +24,23 @@ public class GunManager : MonoBehaviour
         gunPositions.Add(new Vector2(-0.25f, 0.7f));
         gunPositions.Add(new Vector2(0.75f, 0.7f));
 
-        AddGun();
-        AddGun();
+        AddGun(0);
+        AddGun(0);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            AddGun();
+            AddGun(0);
         }
     }
 
-    void AddGun()
+    void AddGun(int gun)
     {
         var pos = gunPositions[spawnedGuns];
 
-        var newGun = Instantiate(gunPrefab, pos, Quaternion.identity); 
+        var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity); 
         
         newGun.GetComponent<Gun>().SetOffset(pos);
         spawnedGuns++;

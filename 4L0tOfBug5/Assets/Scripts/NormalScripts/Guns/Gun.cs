@@ -36,6 +36,11 @@ public class Gun : MonoBehaviour
         FindCloseEnemy();
         Aim();
         Shooting();
+
+        if (player == null)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FindCloseEnemy()

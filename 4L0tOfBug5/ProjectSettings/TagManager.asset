@@ -52,3 +52,6 @@ TagManager:
   - name: XP
     uniqueID: 3642381865
     locked: 0
+  - name: HUD
+    uniqueID: 2554794933
+    locked: 0
