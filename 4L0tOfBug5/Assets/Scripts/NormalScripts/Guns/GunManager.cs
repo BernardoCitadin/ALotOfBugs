@@ -32,7 +32,7 @@ public class GunManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            AddGun(0);
+            AddGun(1);
         }
     }
 
@@ -43,7 +43,15 @@ public class GunManager : MonoBehaviour
         var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity);
         newGun.transform.SetParent(player);
 
-        newGun.GetComponent<Gun>().SetOffset(pos);
+        if (newGun.GetComponent<Gun>()  != null)
+        {
+            newGun.GetComponent<Gun>().SetOffset(pos);
+        }
+        else if (newGun.GetComponent<Shotgun>() != null)
+        {
+            newGun.GetComponent<Gun>().SetOffset(pos);
+        }
+        
         spawnedGuns++;
     }
 }
