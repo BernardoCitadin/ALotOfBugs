@@ -21,6 +21,8 @@ public class EnemyManager : MonoBehaviour
     }
     private void Update()
     {
+        if (!WaveManager.Instance.WaveRunning()) return;
+
         currentTimeBetweenSpawns -= Time.deltaTime;
 
         if(currentTimeBetweenSpawns <= 0)
