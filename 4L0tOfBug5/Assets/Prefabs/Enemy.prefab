@@ -151,3 +151,4 @@ MonoBehaviour:
   xp: {fileID: 5213753297642882123, guid: daa92a851773bb44ab1c095c4d96d046, type: 3}
   damage: 2
   _target: {fileID: 0}
+  xpgain: 1

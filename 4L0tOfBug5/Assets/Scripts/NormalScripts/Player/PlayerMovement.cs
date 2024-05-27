@@ -2,7 +2,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D body;
-    public FixedJoystick joystick;
+    public FloatingJoystick joystick;
 
     public float speed = 5;
 

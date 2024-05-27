@@ -7,8 +7,9 @@ public abstract class Enemy : MonoBehaviour
     protected Rigidbody2D body;
     public GameObject xp;
     public int damage;
-
     public Transform _target;
+
+    public int xpgain;
 
     private void Awake()
     {
@@ -25,6 +26,8 @@ public abstract class Enemy : MonoBehaviour
         life -= damage;
         if (life <= 0)
         {
+            PlayerStats.GainXp(xpgain);
+
             if (Random.Range(0, 100) <= 25)
             {
                 Instantiate(xp, transform.position, transform.rotation);

@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -14,6 +15,7 @@ public class WaveManager : MonoBehaviour
     private void Awake()
     {
         if(Instance == null) Instance = this;
+        StartNewWave();
     }
     private void Start()
     {
@@ -21,6 +23,9 @@ public class WaveManager : MonoBehaviour
         timeText.text = "30";
         waveText.text = "Wave: 1";
     }
+
+    public bool WaveRunning() => waveRunning;
+
     void StartNewWave()
     {
         StopAllCoroutines();

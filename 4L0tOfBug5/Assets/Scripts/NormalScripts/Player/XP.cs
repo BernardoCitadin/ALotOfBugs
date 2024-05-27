@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class XP : MonoBehaviour
 {
-    public int xpgain;
     Rigidbody2D body;
     bool isMagnetized;
     void Start()
@@ -22,11 +21,11 @@ public class XP : MonoBehaviour
         switch (collision.tag)
         {
             case "Player":
-                PlayerStats.GainXp(xpgain);
+                //PlayerStats.GainXp(xpgain);
                 Destroy(gameObject);
                 break;
             case "Magnetic":
-                PlayerMovement.posPlayer = collision.transform;
+                //PlayerMovement.posPlayer = collision.transform;
                 isMagnetized = true;
                 break;
         }
