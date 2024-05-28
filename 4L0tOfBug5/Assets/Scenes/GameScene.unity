@@ -681,6 +681,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745830180}
   m_CullTransparentMesh: 1
+--- !u!1 &778838998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4973016936276862535, guid: 9a49ba15f0d721541b43b532edf24576, type: 3}
+  m_PrefabInstance: {fileID: 1797187814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &778839001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778838998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37dfbd34e592636448673ed636944f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  fireDistance: 0
+  fireRate: 0
+  offset: {x: 0, y: 0}
+  lastShotTime: 0
+  muzzle: {fileID: 0}
+  muzzlePosition: {fileID: 0}
+  projectile: {fileID: 0}
+  bullets: {fileID: 0}
 --- !u!1 &932153145
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +881,8 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8183636739548051358, guid: 9a49ba15f0d721541b43b532edf24576, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9a49ba15f0d721541b43b532edf24576, type: 3}
 --- !u!1 &2046712988
 GameObject:

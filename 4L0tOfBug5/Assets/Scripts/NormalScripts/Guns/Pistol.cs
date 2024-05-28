@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Shotgun : Gun
+public class Pistol : Gun
 {
     [Header("Prefabs")]
     [SerializeField] GameObject muzzle;
-    [SerializeField] Transform[] muzzlePosition;
+    [SerializeField] Transform muzzlePosition;
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
 
@@ -17,6 +17,7 @@ public class Shotgun : Gun
         bullets = GameObject.FindGameObjectWithTag("Bullets").transform;
         anim = GetComponent<Animator>();
         lastShotTime = fireRate;
+        print(bullets.name);
     }
 
     void Update()
@@ -26,19 +27,13 @@ public class Shotgun : Gun
         Aim();
         Shooting();
     }
-
     protected override void Shoot()
     {
-        var muzzleGo = Instantiate(muzzle, muzzlePosition[0].position, transform.rotation, player);
+        var muzzleGo = Instantiate(muzzle, muzzlePosition.position, transform.rotation);
         muzzleGo.transform.SetParent(transform);
         Destroy(muzzleGo, 0.05f);
 
-        var projectileGo = Instantiate(projectile, muzzlePosition[0].position, transform.rotation, bullets);
-        var projectileGo1 = Instantiate(projectile, muzzlePosition[1].position, transform.rotation, bullets);
-        var projectileGo2 = Instantiate(projectile, muzzlePosition[2].position, transform.rotation, bullets);
-
-        Destroy(projectileGo, 0.3f);
-        Destroy(projectileGo1, 0.3f);
-        Destroy(projectileGo2, 0.3f);
+        var projectileGo = Instantiate(projectile, muzzlePosition.position, transform.rotation, bullets);
+        Destroy(projectileGo, 3);
     }
 }

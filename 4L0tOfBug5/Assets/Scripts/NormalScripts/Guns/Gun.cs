@@ -1,60 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public abstract class Gun : MonoBehaviour
 {
-    [Header("Prefabs")]
-    [SerializeField] GameObject muzzle;
-    [SerializeField] Transform muzzlePosition;
-    [SerializeField] GameObject projectile;
-    [SerializeField] Transform player;
-    [SerializeField] Transform bullets;
+    public Transform player;
 
-    [Space(20)]
+    [SerializeField] public float fireDistance;
+    [SerializeField] public float fireRate;
 
-    [Header("Config")]
-    [SerializeField] public float fireDistance = 10f;
-    [SerializeField] public float fireRate = 0.5f;
-
+    public Vector2 offset;
     
-    Vector2 offset;
-    
-
-    private float lastShotTime = 0;
+    public float lastShotTime;
     Transform closeEnemy;
-    Animator anim;
 
     public static Gun Instance;
     private void Awake()
     {
         Instance = this;
     }
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        bullets = GameObject.FindGameObjectWithTag("Bullets").transform;
-        anim = GetComponent<Animator>();
-        lastShotTime = fireRate;
-        print(bullets.name);
-    }
 
-    void Update()
-    {
-        transform.position = (Vector2)player.position + offset;
-
-        FindCloseEnemy();
-        Aim();
-        Shooting();
-
-        if (player == null)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    void FindCloseEnemy()
+    protected virtual void FindCloseEnemy()
     {
         closeEnemy = null;
         float closeDistance = Mathf.Infinity;
@@ -71,8 +35,8 @@ public class Gun : MonoBehaviour
             }
         }
     }
-    
-    void Aim()
+
+    protected virtual void Aim()
     {
         if(closeEnemy != null)
         {
@@ -91,7 +55,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    void Shooting()
+    protected virtual void Shooting()
     {
         if (closeEnemy == null) return;
 
@@ -103,15 +67,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    void Shoot()
-    {
-        var muzzleGo = Instantiate(muzzle, muzzlePosition.position, transform.rotation);
-        muzzleGo.transform.SetParent(transform);
-        Destroy(muzzleGo, 0.05f);
-
-        var projectileGo = Instantiate(projectile, muzzlePosition.position, transform.rotation, bullets);
-        Destroy(projectileGo, 3);
-    }
+    protected abstract void Shoot();
     
     public void SetOffset(Vector2 o)
     {
