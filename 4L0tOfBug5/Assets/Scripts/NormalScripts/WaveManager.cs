@@ -59,5 +59,6 @@ public class WaveManager : MonoBehaviour
         currentWaveTime = 30;
         timeText.text = currentWaveTime.ToString();
         timeText.color = Color.red;
+        StartNewWave();
     }
 }

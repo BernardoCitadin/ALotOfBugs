@@ -43,7 +43,7 @@ public class GunManager : MonoBehaviour
         var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity);
         newGun.transform.SetParent(player);
 
-        if (newGun.GetComponent<Gun>()  != null)
+        if (newGun.GetComponent<Gun>() != null)
         {
             newGun.GetComponent<Gun>().SetOffset(pos);
         }
