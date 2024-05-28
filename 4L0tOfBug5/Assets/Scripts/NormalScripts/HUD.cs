@@ -21,7 +21,7 @@ public class HUD : MonoBehaviour
     }
     public void SetLevel()
     {
-        //xpTxt.text = $"lv:{PlayerStats.nivel}";
+        xpTxt.text = $"Lv: {PlayerStats.nivel}";
     }
     public void SetXp()
     {

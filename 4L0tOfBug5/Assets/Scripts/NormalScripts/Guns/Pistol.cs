@@ -8,7 +8,6 @@ public class Pistol : Gun
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
 
-    Transform closeEnemy;
     Animator anim;
 
     void Start()
@@ -17,7 +16,6 @@ public class Pistol : Gun
         bullets = GameObject.FindGameObjectWithTag("Bullets").transform;
         anim = GetComponent<Animator>();
         lastShotTime = fireRate;
-        print(bullets.name);
     }
 
     void Update()
