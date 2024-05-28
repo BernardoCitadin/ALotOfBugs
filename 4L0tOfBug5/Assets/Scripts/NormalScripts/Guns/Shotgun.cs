@@ -14,8 +14,8 @@ public class Shotgun : MonoBehaviour
     [Space(20)]
 
     [Header("Config")]
-    [SerializeField] float fireDistance = 3f;
-    [SerializeField] float fireRate = 1f;
+    [SerializeField] float fireDistance = 5f;
+    [SerializeField] float fireRate = 1.2f;
 
     
     Vector2 offset;
@@ -23,6 +23,13 @@ public class Shotgun : MonoBehaviour
     private float lastShotTime = 0;
     Transform closeEnemy;
     Animator anim;
+
+    public static Shotgun Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
 
     void Start()
     {
@@ -39,11 +46,6 @@ public class Shotgun : MonoBehaviour
         FindCloseEnemy();
         Aim();
         Shooting();
-
-        if (player == null)
-        {
-            Destroy(gameObject);
-        }
     }
 
     void FindCloseEnemy()
@@ -105,9 +107,9 @@ public class Shotgun : MonoBehaviour
         var projectileGo1 = Instantiate(projectile, muzzlePosition[Random.Range(0, 4)].position, transform.rotation, bullets);
         var projectileGo2 = Instantiate(projectile, muzzlePosition[Random.Range(0, 4)].position, transform.rotation, bullets);
 
-        Destroy(projectileGo, 1.5f);
-        Destroy(projectileGo1, 1.5f);
-        Destroy(projectileGo2, 1.5f);
+        Destroy(projectileGo, 0.3f);
+        Destroy(projectileGo1, 0.3f);
+        Destroy(projectileGo2, 0.3f);
     }
     
     public void SetOffset(Vector2 o)

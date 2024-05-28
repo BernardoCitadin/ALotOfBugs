@@ -134,6 +134,7 @@ MonoBehaviour:
   muzzlePosition: {fileID: 4969348017367838473}
   projectile: {fileID: 6584486029039868954, guid: b554e5cb9414c794786771b83b40ba5f, type: 3}
   player: {fileID: 0}
+  bullets: {fileID: 0}
   fireDistance: 10
   fireRate: 0.5
 --- !u!1 &8968940395876400925

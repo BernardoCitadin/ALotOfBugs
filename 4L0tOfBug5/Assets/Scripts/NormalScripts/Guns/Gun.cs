@@ -12,17 +12,25 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Transform bullets;
 
+    [Space(20)]
+
     [Header("Config")]
-    [SerializeField] float fireDistance = 10f;
-    [SerializeField] float fireRate = 0.5f;
+    [SerializeField] public float fireDistance = 10f;
+    [SerializeField] public float fireRate = 0.5f;
 
     
     Vector2 offset;
+    
 
     private float lastShotTime = 0;
     Transform closeEnemy;
     Animator anim;
 
+    public static Gun Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;

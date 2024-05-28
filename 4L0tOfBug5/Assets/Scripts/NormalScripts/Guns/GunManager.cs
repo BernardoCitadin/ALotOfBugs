@@ -49,7 +49,7 @@ public class GunManager : MonoBehaviour
         }
         else if (newGun.GetComponent<Shotgun>() != null)
         {
-            newGun.GetComponent<Gun>().SetOffset(pos);
+            newGun.GetComponent<Shotgun>().SetOffset(pos);
         }
         
         spawnedGuns++;
