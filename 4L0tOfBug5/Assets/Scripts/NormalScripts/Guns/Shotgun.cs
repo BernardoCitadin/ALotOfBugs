@@ -8,7 +8,6 @@ public class Shotgun : Gun
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
 
-    Transform closeEnemy;
     Animator anim;
 
     void Start()
