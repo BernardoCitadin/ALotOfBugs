@@ -8,10 +8,10 @@ public class PlayerMovement : MonoBehaviour
 
     public static float direction;
 
-    //public Animator animator;
+    public Animator animator;
 
     public static Transform posPlayer;
-    //public SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     //public Transform weapon;
 
@@ -23,26 +23,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        /*
 
-        if (horizontal != 0)
+        if (joystick.Horizontal != 0)
         {
-            direction = horizontal;
+            direction = joystick.Horizontal;
         }
 
-        if (horizontal < 0)
+        if (joystick.Horizontal < 0)
         {
             spriteRenderer.flipX = true;
         }
-        if (horizontal > 0)
+        if (joystick.Horizontal > 0)
         {
             spriteRenderer.flipX = false;
         }
 
-        animator.SetBool("IsWalking", horizontal != 0 || vertical != 0);
-
-        weapon.localScale = new Vector2(direction, weapon.localScale.x);
-        */
+        animator.SetBool("Walking", joystick.Horizontal != 0 || joystick.Vertical != 0);
 
     }
 
