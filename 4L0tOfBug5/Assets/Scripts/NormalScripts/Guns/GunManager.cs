@@ -30,7 +30,11 @@ public class GunManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            AddGun(0);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
         {
             AddGun(1);
         }

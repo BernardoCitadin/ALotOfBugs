@@ -101,9 +101,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1881349389
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1634541898, guid: d0f7c11b8853995458a63bffa211b52e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -257,6 +257,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f505d08c439bf4394fc69581740996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  fireDistance: 3
+  fireRate: 1
+  offset: {x: 0, y: 0}
+  lastShotTime: 0
   muzzle: {fileID: 8654612687090720036, guid: 614513c3b8aceb945a1c6b42b11b2dd0, type: 3}
   muzzlePosition:
   - {fileID: 7073766592047440223}
@@ -264,7 +269,4 @@ MonoBehaviour:
   - {fileID: 7073766592452960387}
   - {fileID: 7073766591319477189}
   projectile: {fileID: 6584486029039868954, guid: b554e5cb9414c794786771b83b40ba5f, type: 3}
-  player: {fileID: 0}
   bullets: {fileID: 0}
-  fireDistance: 3
-  fireRate: 1
