@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats Instance;
     public static int nivel = 1;
     public static int xp = 0, xpToNextLevel = 5;
+    public GameObject panelRestart;
 
     public int xpIncrease = 10, lifeMax = 100;
     public static int luck;
@@ -78,6 +79,7 @@ public class PlayerStats : MonoBehaviour
             if (life <= 0)
             {
                 gameObject.SetActive(false);
+                panelRestart.SetActive(true);
             }
         }
     }
