@@ -29437,6 +29437,7 @@ MonoBehaviour:
   spdToAdd: 0
   Panel: {fileID: 1964226007}
   Pistol: {fileID: 4973016936276862535, guid: 9a49ba15f0d721541b43b532edf24576, type: 3}
+  BulletObj: {fileID: 6584486029039868954, guid: b554e5cb9414c794786771b83b40ba5f, type: 3}
 --- !u!1 &1894061243
 GameObject:
   m_ObjectHideFlags: 0

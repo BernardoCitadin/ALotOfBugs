@@ -8,14 +8,18 @@ public class Itens : MonoBehaviour
     [SerializeField] float atckSpdToAdd;
     [SerializeField] float spdToAdd;
 
+    float fireRateValue = 0.5f;
+
     public GameObject Panel;
-    public GameObject Pistol;
+    public GameObject Pistol, BulletObj;
 
     public static Itens Instance;
 
     private void Awake()
     {
         Instance = this;
+        Pistol.GetComponent<Gun>().fireRate = 0.5f;
+        BulletObj.GetComponent<Bullet>().damage = 2;
     }
 
     public void ItemActivate()
@@ -35,16 +39,14 @@ public class Itens : MonoBehaviour
 
     public void atckSpdItem()
     {
-        //Gun.Instance.fireRate -= atckSpdToAdd;
-        Bullet.Instance.damage -= stghToAdd;
-
+        BulletObj.GetComponent<Bullet>().damage -= stghToAdd;
         Pistol.GetComponent<Gun>().fireRate -= atckSpdToAdd;
-
         Panel.SetActive(false);
     }
     public void stghItem()
     {
-        Bullet.Instance.damage += stghToAdd;
+        //Bullet.Instance.damage += stghToAdd;
+        BulletObj.GetComponent<Bullet>().damage += stghToAdd;
         PlayerMovement.Instance.speed -= spdToAdd;
         Panel.SetActive(false);
     }
@@ -52,6 +54,7 @@ public class Itens : MonoBehaviour
     public void spdItem()
     {
         PlayerMovement.Instance.speed += spdToAdd;
+        PlayerStats.Instance.life -= hpToAdd;
         PlayerStats.Instance.lifeMax -= hpToAdd;
         Panel.SetActive(false);
     }
