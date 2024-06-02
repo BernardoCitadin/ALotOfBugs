@@ -5,9 +5,15 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] int damage;
+    public int damage;
     float speed = 12f;
+    public static Bullet Instance;
 
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void FixedUpdate()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);

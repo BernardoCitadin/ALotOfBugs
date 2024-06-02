@@ -12,9 +12,14 @@ public class PlayerMovement : MonoBehaviour
 
     public static Transform posPlayer;
     public SpriteRenderer spriteRenderer;
+    public static PlayerMovement Instance;
 
     //public Transform weapon;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         posPlayer = transform;
