@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Bullets
   - Crate
+  - Guns
   layers:
   - Default
   - TransparentFX

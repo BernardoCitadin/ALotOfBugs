@@ -9,6 +9,7 @@ public class Itens : MonoBehaviour
     [SerializeField] float spdToAdd;
 
     public GameObject Panel;
+    public GameObject Pistol;
 
     public static Itens Instance;
 
@@ -22,7 +23,7 @@ public class Itens : MonoBehaviour
         hpToAdd = Random.Range(5, 15);
         spdToAdd = Random.Range(0.3f, 0.6f);
         stghToAdd = Random.Range(1, 3);
-        atckSpdToAdd = Random.Range(0.3f, 0.8f);
+        atckSpdToAdd = Random.Range(0.05f, 0.08f);
     }
 
     public void hpItem()
@@ -34,8 +35,11 @@ public class Itens : MonoBehaviour
 
     public void atckSpdItem()
     {
-        Gun.Instance.fireRate -= atckSpdToAdd;
+        //Gun.Instance.fireRate -= atckSpdToAdd;
         Bullet.Instance.damage -= stghToAdd;
+
+        Pistol.GetComponent<Gun>().fireRate -= atckSpdToAdd;
+
         Panel.SetActive(false);
     }
     public void stghItem()
