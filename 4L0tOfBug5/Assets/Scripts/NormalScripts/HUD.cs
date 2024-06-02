@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public static HUD instance;
-    public TMP_Text xpTxt;
+    public TMP_Text xpTxt, moneyTxt;
     public Image xpBar, lifeBar;
     private void Start()
     {
@@ -13,15 +13,12 @@ public class HUD : MonoBehaviour
         SetXp();
         SetLevel();
         SetLife();
+        SetMoney();
     }
 
-    private void Update()
-    {
-
-    }
     public void SetLevel()
     {
-        xpTxt.text = $"Lv: {PlayerStats.nivel}";
+        xpTxt.text = $"Lv: {PlayerStats.Instance.nivel}";
     }
     public void SetXp()
     {
@@ -31,5 +28,10 @@ public class HUD : MonoBehaviour
     public void SetLife()
     {
         lifeBar.fillAmount = (float)PlayerStats.Instance.GetLife() / (float)PlayerStats.Instance.lifeMax;
+    }
+
+    public void SetMoney()
+    {
+        moneyTxt.text = $"Money: {PlayerStats.Instance.money}";
     }
 }

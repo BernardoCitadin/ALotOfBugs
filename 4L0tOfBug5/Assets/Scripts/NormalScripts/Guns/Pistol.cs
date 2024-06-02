@@ -7,11 +7,12 @@ public class Pistol : Gun
     [SerializeField] Transform muzzlePosition;
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
-
+    public static Pistol instance;
     Animator anim;
 
     void Start()
     {
+        instance = this;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         bullets = GameObject.FindGameObjectWithTag("Bullets").transform;
         anim = GetComponent<Animator>();

@@ -8,18 +8,13 @@ public class Itens : MonoBehaviour
     [SerializeField] float atckSpdToAdd;
     [SerializeField] float spdToAdd;
 
-    float fireRateValue = 0.5f;
-
     public GameObject Panel;
-    public GameObject Pistol, BulletObj;
 
     public static Itens Instance;
 
     private void Awake()
     {
         Instance = this;
-        Pistol.GetComponent<Gun>().fireRate = 0.5f;
-        BulletObj.GetComponent<Bullet>().damage = 2;
     }
 
     public void ItemActivate()
@@ -27,35 +22,68 @@ public class Itens : MonoBehaviour
         hpToAdd = Random.Range(5, 15);
         spdToAdd = Random.Range(0.3f, 0.6f);
         stghToAdd = Random.Range(1, 3);
-        atckSpdToAdd = Random.Range(0.05f, 0.08f);
+        atckSpdToAdd = Random.Range(0.05f, 0.10f);
+        print(PlayerStats.Instance.lifeMax);
+        print(Gun.Instance.fireRate);
+        print(Bullet.Instance.damage);
+        print(PlayerMovement.Instance.speed);
     }
 
     public void hpItem()
     {
         PlayerStats.Instance.lifeMax += hpToAdd;
+        print(PlayerStats.Instance.lifeMax);
         Gun.Instance.fireRate += atckSpdToAdd;
+        print(Gun.Instance.fireRate);
         Panel.SetActive(false);
+        if (PlayerStats.Instance.money >= 2)
+        {
+            PlayerStats.Instance.Cost(2);
+        }
     }
 
     public void atckSpdItem()
     {
-        BulletObj.GetComponent<Bullet>().damage -= stghToAdd;
-        Pistol.GetComponent<Gun>().fireRate -= atckSpdToAdd;
+        if (Bullet.Instance.damage > stghToAdd)
+        {
+            Bullet.Instance.damage -= stghToAdd;
+        }
+        else Bullet.Instance.damage = 1;
+
+            print(Bullet.Instance.damage);
+        Gun.Instance.fireRate -= atckSpdToAdd;
+        print(Gun.Instance.fireRate);
         Panel.SetActive(false);
+        if (PlayerStats.Instance.money >= 3)
+        {
+            PlayerStats.Instance.Cost(3);
+        }
     }
     public void stghItem()
     {
         //Bullet.Instance.damage += stghToAdd;
-        BulletObj.GetComponent<Bullet>().damage += stghToAdd;
+        Bullet.Instance.damage += stghToAdd;
+        print(Bullet.Instance.damage);
         PlayerMovement.Instance.speed -= spdToAdd;
+        print(PlayerMovement.Instance.speed);
         Panel.SetActive(false);
+        if (PlayerStats.Instance.money >= 4)
+        {
+            PlayerStats.Instance.Cost(4);
+        }
     }
 
     public void spdItem()
     {
         PlayerMovement.Instance.speed += spdToAdd;
+        print(PlayerMovement.Instance.speed);
         PlayerStats.Instance.life -= hpToAdd;
         PlayerStats.Instance.lifeMax -= hpToAdd;
+        print(PlayerStats.Instance.lifeMax);
         Panel.SetActive(false);
+        if (PlayerStats.Instance.money >= 1)
+        {
+            PlayerStats.Instance.Cost(1);
+        }
     }
 }

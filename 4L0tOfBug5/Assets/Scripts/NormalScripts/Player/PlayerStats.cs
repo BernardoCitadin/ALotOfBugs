@@ -4,9 +4,10 @@ using UnityEngine.Events;
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats Instance;
-    public static int nivel = 1;
+    public int nivel = 1;
     public static int xp = 0, xpToNextLevel = 5;
     public GameObject panelRestart;
+    public int money = 0;
 
     public int xpIncrease = 10, lifeMax = 100;
     public static int luck;
@@ -44,7 +45,7 @@ public class PlayerStats : MonoBehaviour
         HUD.instance.SetXp();
         if (xp >= xpToNextLevel)
         {
-            PlayerStats.nivel++;
+            PlayerStats.Instance.nivel++;
             xp = 0;
             xpToNextLevel += PlayerStats.Instance.xpIncrease;
             HUD.instance.SetXp();
@@ -84,6 +85,18 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void AddMoney(int Value)
+    {
+        money += Value;
+        HUD.instance.SetMoney();
+    }
+
+    public void Cost(int cost)
+    {       
+        money -= cost;
+        HUD.instance.SetMoney();
+
+    }
     public int GetLife()
     {
         return life;

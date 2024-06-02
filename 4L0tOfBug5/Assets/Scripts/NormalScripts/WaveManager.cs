@@ -1,12 +1,14 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timeText, waveText;
     public static WaveManager Instance;
+
+    public UnityEvent EndWave;
 
     bool waveRunning = true;
     int currentWave = 0;
@@ -15,7 +17,6 @@ public class WaveManager : MonoBehaviour
     private void Awake()
     {
         if(Instance == null) Instance = this;
-        StartNewWave();
     }
     private void Start()
     {
@@ -26,12 +27,13 @@ public class WaveManager : MonoBehaviour
 
     public bool WaveRunning() => waveRunning;
 
-    void StartNewWave()
+    public void StartNewWave()
     {
         StopAllCoroutines();
         timeText.color = Color.white;
         currentWave++;
         waveRunning = true;
+        UnPause();
         currentWaveTime = 30;
         waveText.text = "Wave: " + currentWave;
         StartCoroutine(WaveTimer());
@@ -55,10 +57,18 @@ public class WaveManager : MonoBehaviour
     {
         StopAllCoroutines();
         waveRunning = false;
-        EnemyManager.Instance.DestroyAllEnemies();
-        currentWaveTime = 30;
-        timeText.text = currentWaveTime.ToString();
+        Pause();
         timeText.color = Color.red;
-        StartNewWave();
+        EndWave.Invoke();
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void UnPause()
+    {
+        Time.timeScale = 1f;
     }
 }

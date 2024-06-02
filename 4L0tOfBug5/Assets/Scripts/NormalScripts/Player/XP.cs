@@ -4,6 +4,8 @@ public class XP : MonoBehaviour
 {
     Rigidbody2D body;
     bool isMagnetized;
+    int money = 1;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -21,7 +23,7 @@ public class XP : MonoBehaviour
         switch (collision.tag)
         {
             case "Player":
-                //PlayerStats.GainXp(xpgain);
+                PlayerStats.Instance.AddMoney(money);
                 Destroy(gameObject);
                 break;
             case "Magnetic":
