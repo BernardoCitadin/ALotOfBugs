@@ -10,11 +10,18 @@ public class Itens : MonoBehaviour
 
     public GameObject Panel;
 
+    float AtckSpdRepairDmg = 0.5f;
     public static Itens Instance;
 
     private void Awake()
     {
         Instance = this;
+
+    }
+
+    private void Update()
+    {
+        Gun.Instance.fireRate = AtckSpdRepairDmg;
     }
 
     public void ItemActivate()
@@ -33,7 +40,7 @@ public class Itens : MonoBehaviour
     {
         PlayerStats.Instance.lifeMax += hpToAdd;
         print(PlayerStats.Instance.lifeMax);
-        Gun.Instance.fireRate += atckSpdToAdd;
+        AtckSpdRepairDmg += atckSpdToAdd;
         print(Gun.Instance.fireRate);
         Panel.SetActive(false);
         if (PlayerStats.Instance.money >= 2)
@@ -51,7 +58,7 @@ public class Itens : MonoBehaviour
         else Bullet.Instance.damage = 1;
 
             print(Bullet.Instance.damage);
-        Gun.Instance.fireRate -= atckSpdToAdd;
+        AtckSpdRepairDmg -= atckSpdToAdd;
         print(Gun.Instance.fireRate);
         Panel.SetActive(false);
         if (PlayerStats.Instance.money >= 3)
