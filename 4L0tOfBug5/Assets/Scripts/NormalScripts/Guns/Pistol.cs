@@ -10,6 +10,8 @@ public class Pistol : Gun
     public static Pistol instance;
     Animator anim;
 
+    public SpriteRenderer spg;
+
     void Start()
     {
         instance = this;
@@ -25,6 +27,15 @@ public class Pistol : Gun
         FindCloseEnemy();
         Aim();
         Shooting();
+
+        if (angle <= 90)
+        {
+            spg.flipY = true;
+        }
+        else if (angle > 90)
+        {
+            spg.flipY = false;
+        }
     }
     protected override void Shoot()
     {

@@ -83,7 +83,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3aed59d5481a19e41a3dbeda113f4ec3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -262,6 +262,7 @@ MonoBehaviour:
   fireRate: 1
   offset: {x: 0, y: 0}
   lastShotTime: 0
+  angle: 0
   muzzle: {fileID: 8654612687090720036, guid: 614513c3b8aceb945a1c6b42b11b2dd0, type: 3}
   muzzlePosition:
   - {fileID: 7073766592047440223}
@@ -270,3 +271,4 @@ MonoBehaviour:
   - {fileID: 7073766591319477189}
   projectile: {fileID: 6584486029039868954, guid: b554e5cb9414c794786771b83b40ba5f, type: 3}
   bullets: {fileID: 0}
+  spg: {fileID: 7073766591541955796}

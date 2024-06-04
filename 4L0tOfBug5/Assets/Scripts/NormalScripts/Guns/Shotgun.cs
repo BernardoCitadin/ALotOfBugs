@@ -8,6 +8,8 @@ public class Shotgun : Gun
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
 
+    public SpriteRenderer spg;
+
     Animator anim;
 
     void Start()
@@ -24,6 +26,15 @@ public class Shotgun : Gun
         FindCloseEnemy();
         Aim();
         Shooting();
+
+        if (angle <= 90)
+        {
+            spg.flipY = true;
+        }
+        else if (angle > 90)
+        {
+            spg.flipY = false;
+        }
     }
 
     protected override void Shoot()

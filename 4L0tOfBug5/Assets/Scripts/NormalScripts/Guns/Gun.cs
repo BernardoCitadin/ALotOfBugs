@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public abstract class Gun : MonoBehaviour
 {
@@ -8,11 +9,14 @@ public abstract class Gun : MonoBehaviour
     [SerializeField] public float fireRate;
 
     public Vector2 offset;
+    SpriteRenderer spg;
     
     public float lastShotTime;
     Transform closeEnemy;
 
     public static Gun Instance;
+
+    public float angle;
     private void Awake()
     {
         Instance = this;
@@ -43,7 +47,7 @@ public abstract class Gun : MonoBehaviour
             Vector3 direction = closeEnemy.position - transform.position;
             direction.Normalize();
 
-            float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             transform.rotation = Quaternion.Euler(0,0,angle);
 
