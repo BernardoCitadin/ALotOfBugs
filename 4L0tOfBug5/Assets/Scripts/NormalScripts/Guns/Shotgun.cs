@@ -26,6 +26,7 @@ public class Shotgun : Gun
         FindCloseEnemy();
         Aim();
         Shooting();
+        /*
 
         if (angle <= 90)
         {
@@ -35,6 +36,7 @@ public class Shotgun : Gun
         {
             spg.flipY = false;
         }
+        */
     }
 
     protected override void Shoot()

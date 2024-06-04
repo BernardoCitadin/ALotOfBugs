@@ -28,6 +28,7 @@ public class Pistol : Gun
         Aim();
         Shooting();
 
+        /*
         if (angle <= 90)
         {
             spg.flipY = true;
@@ -36,6 +37,7 @@ public class Pistol : Gun
         {
             spg.flipY = false;
         }
+        */
     }
     protected override void Shoot()
     {
