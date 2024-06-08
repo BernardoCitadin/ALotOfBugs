@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class Shotgun : Gun
 {
-    [Header("Prefabs")]
+    [Header("Muzzle Settings")]
     [SerializeField] GameObject muzzle;
     [SerializeField] Transform[] muzzlePosition;
+    [Header("Bullets Settings")]
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
 
-    public SpriteRenderer spg;
+    [HideInInspector] public SpriteRenderer spg;
 
     Animator anim;
 

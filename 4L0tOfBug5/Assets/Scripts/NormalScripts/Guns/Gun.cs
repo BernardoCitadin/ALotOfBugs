@@ -4,18 +4,20 @@ public abstract class Gun : MonoBehaviour
 {
     public Transform player;
 
+    [Header("Fire Settings")]
     [SerializeField] public float fireDistance;
     [SerializeField] public float fireRate;
 
-    public Vector2 offset;
+    [HideInInspector] public Vector2 offset;
     SpriteRenderer spg;
-    
+
+    [Header("Shot Settings")]
     public float lastShotTime;
-    Transform closeEnemy;
+    [HideInInspector]public Transform closeEnemy;
 
     public static Gun Instance;
 
-    public float angle;
+    [HideInInspector]public float angle;
     private void Awake()
     {
         Instance = this;

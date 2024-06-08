@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class Pistol : Gun
 {
-    [Header("Prefabs")]
+    [Header("Muzzle Settings")]
     [SerializeField] GameObject muzzle;
     [SerializeField] Transform muzzlePosition;
+    [Header("Bullets Settings")]
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
     public static Pistol instance;
     Animator anim;
 
-    public SpriteRenderer spg;
+    [HideInInspector] public SpriteRenderer spg;
 
     void Start()
     {
