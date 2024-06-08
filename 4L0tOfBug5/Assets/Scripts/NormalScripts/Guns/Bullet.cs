@@ -1,19 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     [Header("Config")]
     public int damage = 1;
-    float speed = 12f;
+    [SerializeField]float speed = 12f;
     public static Bullet Instance;
+
+    [Header("Melee")]
+    [SerializeField] bool IsMelee;
 
 
     private void Awake()
     {
         Instance = this;
     }
+
     private void FixedUpdate()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -22,10 +24,16 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var enemy = other.gameObject.GetComponent<Enemy>();
-        if (enemy != null)
+        if (enemy != null && !IsMelee)
         {
             Destroy(gameObject);
             enemy.TakeDamage(damage);
         }
+
+        else if (enemy != null && IsMelee)
+        {
+            enemy.TakeDamage(damage);
+        }
+
     }
 }

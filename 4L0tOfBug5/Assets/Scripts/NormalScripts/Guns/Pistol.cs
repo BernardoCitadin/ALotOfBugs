@@ -21,7 +21,7 @@ public class Pistol : Gun
         lastShotTime = fireRate;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position = (Vector2)player.position + offset;
         FindCloseEnemy();

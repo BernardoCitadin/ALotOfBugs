@@ -8,11 +8,15 @@ public abstract class Enemy : MonoBehaviour
     public GameObject xp;
     public int damage;
     public Transform _target;
+    public Transform EnemyTransform;
+
+    public static Enemy Instance;
 
     public int xpgain;
 
     private void Awake()
     {
+        Instance = this;
         _target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
