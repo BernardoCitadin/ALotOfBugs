@@ -7,6 +7,7 @@ public class Itens : MonoBehaviour
     [SerializeField] int stghToAdd;
     [SerializeField] float atckSpdToAdd;
     [SerializeField] float spdToAdd;
+    [SerializeField] int regenValue;
 
     public GameObject Panel;
 
@@ -16,7 +17,6 @@ public class Itens : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
     }
 
     private void Update()
@@ -30,19 +30,14 @@ public class Itens : MonoBehaviour
         spdToAdd = Random.Range(0.3f, 0.6f);
         stghToAdd = Random.Range(1, 3);
         atckSpdToAdd = Random.Range(0.05f, 0.10f);
-        print(PlayerStats.Instance.lifeMax);
-        print(Gun.Instance.fireRate);
-        print(Bullet.Instance.damage);
-        print(PlayerMovement.Instance.speed);
     }
 
     public void hpItem()
     {
         PlayerStats.Instance.lifeMax += hpToAdd;
-        print(PlayerStats.Instance.lifeMax);
         AtckSpdRepairDmg += atckSpdToAdd;
-        print(Gun.Instance.fireRate);
         Panel.SetActive(false);
+
         if (PlayerStats.Instance.money >= 2)
         {
             PlayerStats.Instance.Cost(2);
@@ -57,9 +52,8 @@ public class Itens : MonoBehaviour
         }
         else Bullet.Instance.damage = 1;
 
-            print(Bullet.Instance.damage);
         AtckSpdRepairDmg -= atckSpdToAdd;
-        print(Gun.Instance.fireRate);
+
         Panel.SetActive(false);
         if (PlayerStats.Instance.money >= 3)
         {
@@ -70,10 +64,9 @@ public class Itens : MonoBehaviour
     {
         //Bullet.Instance.damage += stghToAdd;
         Bullet.Instance.damage += stghToAdd;
-        print(Bullet.Instance.damage);
         PlayerMovement.Instance.speed -= spdToAdd;
-        print(PlayerMovement.Instance.speed);
         Panel.SetActive(false);
+
         if (PlayerStats.Instance.money >= 4)
         {
             PlayerStats.Instance.Cost(4);
@@ -83,14 +76,34 @@ public class Itens : MonoBehaviour
     public void spdItem()
     {
         PlayerMovement.Instance.speed += spdToAdd;
-        print(PlayerMovement.Instance.speed);
         PlayerStats.Instance.life -= hpToAdd;
         PlayerStats.Instance.lifeMax -= hpToAdd;
-        print(PlayerStats.Instance.lifeMax);
         Panel.SetActive(false);
+
         if (PlayerStats.Instance.money >= 1)
         {
             PlayerStats.Instance.Cost(1);
+        }
+    }
+
+    public void regenItem()
+    {
+        PlayerStats.Instance.life += regenValue;
+        Panel.SetActive(false);
+
+        if (PlayerStats.Instance.money >= 1)
+        {
+            PlayerStats.Instance.Cost(1);
+        }
+    }
+    
+    public void restoreAllHp()
+    {
+        PlayerStats.Instance.life = PlayerStats.Instance.lifeMax;
+
+        if (PlayerStats.Instance.money >= 5)
+        {
+            PlayerStats.Instance.Cost(5);
         }
     }
 }
