@@ -8,7 +8,7 @@ public abstract class Gun : MonoBehaviour
     [SerializeField] public float fireDistance;
     [SerializeField] public float fireRate;
 
-    [HideInInspector] public Vector2 offset;
+    public Vector2 offset;
     SpriteRenderer spg;
 
     [Header("Shot Settings")]
@@ -18,6 +18,9 @@ public abstract class Gun : MonoBehaviour
     public static Gun Instance;
 
     [HideInInspector]public float angle;
+
+    [Header("Set Melee Weapon")]
+    [SerializeField] bool isMelee;
     private void Awake()
     {
         Instance = this;
@@ -54,9 +57,13 @@ public abstract class Gun : MonoBehaviour
 
             transform.position = (Vector2)player.position + offset;
         }
+        else if(closeEnemy == null && isMelee)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
         else
-        { 
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 

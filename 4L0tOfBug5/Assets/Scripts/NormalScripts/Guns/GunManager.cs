@@ -38,6 +38,10 @@ public class GunManager : MonoBehaviour
         {
             AddGun(1);
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            AddGun(2);
+        }
     }
 
     void AddGun(int gun)

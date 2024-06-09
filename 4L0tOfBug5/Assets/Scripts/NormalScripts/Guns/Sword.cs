@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Sword : Gun
 {
@@ -9,7 +7,6 @@ public class Sword : Gun
     protected override void Shoot()
     {
         anim.SetBool("Attacking", true);
-        transform.position = Gun.Instance.closeEnemy.position;
     }
 
     private void FixedUpdate()
