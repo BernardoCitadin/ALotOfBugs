@@ -9,7 +9,6 @@ public class MeleeWeapon : Gun
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
 
-    Transform closeEnemy;
     Animator anim;
 
     void Start()

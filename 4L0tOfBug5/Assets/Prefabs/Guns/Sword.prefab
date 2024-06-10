@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7723629452378886737}
   - component: {fileID: 7723629452378886736}
   m_Layer: 0
-  m_Name: Sword 1
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1814207531767964241, guid: 14bbeee3d50ebba4e83721ff183a462a, type: 3}
-  fireDistance: 5
-  fireRate: 4
+  fireDistance: 3
+  fireRate: 1
   offset: {x: 0, y: 0}
   lastShotTime: 0
   closeEnemy: {fileID: 0}

@@ -69,9 +69,11 @@ public abstract class Gun : MonoBehaviour
 
     protected virtual void Shooting()
     {
-        if (closeEnemy == null) return;
-
         lastShotTime += Time.deltaTime;
+        if (closeEnemy == null)
+        {
+            return;
+        }
         if (lastShotTime >= fireRate)
         {
             Shoot();

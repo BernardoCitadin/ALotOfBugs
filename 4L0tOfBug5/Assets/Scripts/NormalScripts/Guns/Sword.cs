@@ -6,10 +6,15 @@ public class Sword : Gun
     public Animator anim;
     protected override void Shoot()
     {
+        print("bangbang");
         anim.SetBool("Attacking", true);
     }
-
-    private void FixedUpdate()
+    private void Awake()
+    {
+        Aim();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+    private void Update()
     {
         FindCloseEnemy();
         Aim();

@@ -11,6 +11,8 @@ public class GunManager : MonoBehaviour
 
     int spawnedGuns = 0;
 
+    public int selectedGun;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -24,7 +26,7 @@ public class GunManager : MonoBehaviour
         gunPositions.Add(new Vector2(-0.25f, 0.7f));
         gunPositions.Add(new Vector2(0.75f, 0.7f));
 
-        //AddGun(0);
+        AddGun(selectedGun);
         //AddGun(0);
     }
 
@@ -59,7 +61,10 @@ public class GunManager : MonoBehaviour
         {
             newGun.GetComponent<Shotgun>().SetOffset(pos);
         }
-        
+        else if (newGun.GetComponent<Sword>() != null)
+        {
+            newGun.GetComponent<Sword>().SetOffset(pos);
+        }
         spawnedGuns++;
     }
 }
