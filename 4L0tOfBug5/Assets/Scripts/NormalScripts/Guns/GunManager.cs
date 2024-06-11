@@ -12,8 +12,9 @@ public class GunManager : MonoBehaviour
     int spawnedGuns = 0;
 
     public int selectedGun;
+    bool inicialized;
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -26,23 +27,28 @@ public class GunManager : MonoBehaviour
         gunPositions.Add(new Vector2(-0.25f, 0.7f));
         gunPositions.Add(new Vector2(0.75f, 0.7f));
 
-        AddGun(selectedGun);
+        
         //AddGun(0);
     }
 
     private void Update()
     {
+        if (inicialized)
+        {
+            AddGun(selectedGun);
+            inicialized = false;
+        }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            AddGun(0);
+            AddGun(2);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            AddGun(1);
+            AddGun(4);
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            AddGun(2);
+            AddGun(0);
         }
     }
 
@@ -66,5 +72,13 @@ public class GunManager : MonoBehaviour
             newGun.GetComponent<Sword>().SetOffset(pos);
         }
         spawnedGuns++;
+    }
+    public void SelectGun(int gun)
+    {
+        selectedGun = gun;
+    }
+    public void Inicialized()
+    {
+        inicialized = true;
     }
 }
