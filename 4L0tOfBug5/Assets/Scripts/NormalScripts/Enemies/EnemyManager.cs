@@ -11,7 +11,7 @@ public enum ClassEnemy
 public class EnemyManager : MonoBehaviour
 {
     [Header("Enemy Config")]
-    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject[] enemyPrefab;
     [SerializeField] float timeBetweenSpawns = 0.5f;
 
     float currentTimeBetweenSpawns;
@@ -63,7 +63,8 @@ public class EnemyManager : MonoBehaviour
         switch (classEnemy)
         {
             case ClassEnemy.Strong:
-
+                var e = Instantiate(enemyPrefab[0], RandomPostion(), Quaternion.identity);
+                e.transform.SetParent(enemiesParent);
                 break;
             case ClassEnemy.Normal:
 
@@ -81,8 +82,34 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        var e = Instantiate(enemyPrefab, RandomPostion(), Quaternion.identity);
-        e.transform.SetParent(enemiesParent);
+        var ClassRandom = Random.Range(0, 2);
+        var TypeRandom = Random.Range(0, 2);
+
+        switch (ClassRandom)
+        {
+            case 0:
+                classEnemy = ClassEnemy.Strong;
+                break;
+            case 1:
+                classEnemy = ClassEnemy.Normal;
+                break;
+            case 2:
+                classEnemy = ClassEnemy.Fast;
+                break;
+        }
+
+        switch (TypeRandom)
+        {
+            case 0:
+                typeEnemy = TypeEnemy.Terrestrial;
+                break;
+            case 1:
+                typeEnemy = TypeEnemy.Normal;
+                break;
+            case 2:
+                typeEnemy = TypeEnemy.Aerial;
+                break;
+        }
     }
 
     public void DestroyAllEnemies()

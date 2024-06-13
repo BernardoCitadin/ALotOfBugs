@@ -41584,10 +41584,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401a9e5499f586d45a3279bebbed1afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1908472827883696540, guid: 7eaa0b8667ab52c40b185194e7748438, type: 3}
+  enemyPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   timeBetweenSpawns: 2
   classEnemy: 0
-  typeEnemy: 0
+  typeEnemy: 1
 --- !u!4 &1903871256
 Transform:
   m_ObjectHideFlags: 0
