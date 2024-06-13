@@ -27,17 +27,12 @@ public class GunManager : MonoBehaviour
         gunPositions.Add(new Vector2(-0.25f, 0.7f));
         gunPositions.Add(new Vector2(0.75f, 0.7f));
 
-        
+        AddGun(selectedGun);
         //AddGun(0);
     }
 
     private void Update()
     {
-        if (inicialized)
-        {
-            AddGun(selectedGun);
-            inicialized = false;
-        }
         if (Input.GetKeyDown(KeyCode.P))
         {
             AddGun(2);

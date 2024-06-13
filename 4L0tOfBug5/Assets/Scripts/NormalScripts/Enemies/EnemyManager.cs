@@ -1,10 +1,26 @@
 using UnityEngine;
 
+public enum TypeEnemy
+{
+    Terrestrial, Normal, Aerial
+}
+public enum ClassEnemy
+{
+    Strong, Normal, Fast
+}
 public class EnemyManager : MonoBehaviour
 {
+    [Header("Enemy Config")]
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] float timeBetweenSpawns = 0.5f;
+
     float currentTimeBetweenSpawns;
+
+    [Space(5)]
+    [SerializeField]ClassEnemy classEnemy;
+
+    [Space(5)]
+    [SerializeField]TypeEnemy typeEnemy;
 
     Transform enemiesParent;
 
@@ -29,6 +45,32 @@ public class EnemyManager : MonoBehaviour
         {
             SpawnEnemy();
             currentTimeBetweenSpawns = timeBetweenSpawns;
+        }
+
+        switch (typeEnemy)
+        {
+            case TypeEnemy.Terrestrial:
+
+                break;
+            case TypeEnemy.Normal:
+
+                break;
+            case TypeEnemy.Aerial:
+
+                break;
+        }
+
+        switch (classEnemy)
+        {
+            case ClassEnemy.Strong:
+
+                break;
+            case ClassEnemy.Normal:
+
+                break;
+            case ClassEnemy.Fast:
+
+                break;
         }
     }
 
