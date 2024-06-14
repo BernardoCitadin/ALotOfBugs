@@ -4,10 +4,6 @@ public enum TypeEnemy
 {
     Terrestrial, Normal, Aerial
 }
-public enum ClassEnemy
-{
-    Strong, Normal, Fast
-}
 public class EnemyManager : MonoBehaviour
 {
     [Header("Enemy Config")]
@@ -15,9 +11,6 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] float timeBetweenSpawns = 0.5f;
 
     float currentTimeBetweenSpawns;
-
-    [Space(5)]
-    [SerializeField]ClassEnemy classEnemy;
 
     [Space(5)]
     [SerializeField]TypeEnemy typeEnemy;
@@ -50,27 +43,58 @@ public class EnemyManager : MonoBehaviour
         switch (typeEnemy)
         {
             case TypeEnemy.Terrestrial:
-
+                var TerrestrialFenotype = Random.Range(0, 2);
+                switch (TerrestrialFenotype)
+                {
+                    case 0:
+                        var Fast = Instantiate(enemyPrefab[0], RandomPostion(), Quaternion.identity);
+                        Fast.transform.SetParent(enemiesParent);
+                        break;
+                    case 1:
+                        var Normal = Instantiate(enemyPrefab[1], RandomPostion(), Quaternion.identity);
+                        Normal.transform.SetParent(enemiesParent);
+                        break;
+                    case 2:
+                        var Strong = Instantiate(enemyPrefab[2], RandomPostion(), Quaternion.identity);
+                        Strong.transform.SetParent(enemiesParent);
+                        break;
+                }
                 break;
             case TypeEnemy.Normal:
-
+                var NormalFenotype = Random.Range(0, 2);
+                switch (NormalFenotype)
+                {
+                    case 0:
+                        var Fast = Instantiate(enemyPrefab[3], RandomPostion(), Quaternion.identity);
+                        Fast.transform.SetParent(enemiesParent);
+                        break;
+                    case 1:
+                        var Normal = Instantiate(enemyPrefab[4], RandomPostion(), Quaternion.identity);
+                        Normal.transform.SetParent(enemiesParent);
+                        break;
+                    case 2:
+                        var Strong = Instantiate(enemyPrefab[5], RandomPostion(), Quaternion.identity);
+                        Strong.transform.SetParent(enemiesParent);
+                        break;
+                }
                 break;
             case TypeEnemy.Aerial:
-
-                break;
-        }
-
-        switch (classEnemy)
-        {
-            case ClassEnemy.Strong:
-                var e = Instantiate(enemyPrefab[0], RandomPostion(), Quaternion.identity);
-                e.transform.SetParent(enemiesParent);
-                break;
-            case ClassEnemy.Normal:
-
-                break;
-            case ClassEnemy.Fast:
-
+                var AerialFenotype = Random.Range(0, 2);
+                switch (AerialFenotype)
+                {
+                    case 0:
+                        var Fast = Instantiate(enemyPrefab[6], RandomPostion(), Quaternion.identity);
+                        Fast.transform.SetParent(enemiesParent);
+                        break;
+                    case 1:
+                        var Normal = Instantiate(enemyPrefab[7], RandomPostion(), Quaternion.identity);
+                        Normal.transform.SetParent(enemiesParent);
+                        break;
+                    case 2:
+                        var Strong = Instantiate(enemyPrefab[8], RandomPostion(), Quaternion.identity);
+                        Strong.transform.SetParent(enemiesParent);
+                        break;
+                }
                 break;
         }
     }
@@ -82,21 +106,7 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        var ClassRandom = Random.Range(0, 2);
         var TypeRandom = Random.Range(0, 2);
-
-        switch (ClassRandom)
-        {
-            case 0:
-                classEnemy = ClassEnemy.Strong;
-                break;
-            case 1:
-                classEnemy = ClassEnemy.Normal;
-                break;
-            case 2:
-                classEnemy = ClassEnemy.Fast;
-                break;
-        }
 
         switch (TypeRandom)
         {
