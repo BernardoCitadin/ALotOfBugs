@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,13 @@ public class PlayerStats : MonoBehaviour
 
     public UnityEvent OnPause, OnUnpause, OnLevelUp;
 
+    public List<GameObject> weapons;
+
+    private void Awake()
+    {
+        Instance = this;
+        life = lifeMax;
+    }
 
     private void Update()
     {
@@ -31,14 +39,8 @@ public class PlayerStats : MonoBehaviour
                 OnPause.Invoke();
             }
         }
-
     }
 
-    private void Awake()
-    {
-        Instance = this;
-        life = lifeMax;
-    }
     public static void GainXp(int xpGain)
     {
         xp += xpGain;

@@ -12,7 +12,6 @@ public class GunManager : MonoBehaviour
     int spawnedGuns = 0;
 
     public int selectedGun;
-    bool inicialized;
 
     private void Awake()
     {
@@ -53,6 +52,7 @@ public class GunManager : MonoBehaviour
 
         var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity);
         newGun.transform.SetParent(player);
+        PlayerStats.Instance.weapons[gun] = newGun;
 
         if (newGun.GetComponent<Gun>() != null)
         {
@@ -71,9 +71,5 @@ public class GunManager : MonoBehaviour
     public void SelectGun(int gun)
     {
         selectedGun = gun;
-    }
-    public void Inicialized()
-    {
-        inicialized = true;
     }
 }

@@ -11,7 +11,7 @@ public class Pistol : Gun
     public static Pistol instance;
     Animator anim;
 
-    [HideInInspector] public SpriteRenderer spg;
+    //public SpriteRenderer spg;
 
     void Start()
     {

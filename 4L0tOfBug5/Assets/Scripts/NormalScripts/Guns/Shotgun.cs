@@ -8,8 +8,8 @@ public class Shotgun : Gun
     [Header("Bullets Settings")]
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
-
-    [HideInInspector] public SpriteRenderer spg;
+    
+    //public SpriteRenderer spg;
 
     Animator anim;
 
