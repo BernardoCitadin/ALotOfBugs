@@ -39,64 +39,6 @@ public class EnemyManager : MonoBehaviour
             SpawnEnemy();
             currentTimeBetweenSpawns = timeBetweenSpawns;
         }
-
-        switch (typeEnemy)
-        {
-            case TypeEnemy.Terrestrial:
-                var TerrestrialFenotype = Random.Range(0, 2);
-                switch (TerrestrialFenotype)
-                {
-                    case 0:
-                        var Fast = Instantiate(enemyPrefab[0], RandomPostion(), Quaternion.identity);
-                        Fast.transform.SetParent(enemiesParent);
-                        break;
-                    case 1:
-                        var Normal = Instantiate(enemyPrefab[1], RandomPostion(), Quaternion.identity);
-                        Normal.transform.SetParent(enemiesParent);
-                        break;
-                    case 2:
-                        var Strong = Instantiate(enemyPrefab[2], RandomPostion(), Quaternion.identity);
-                        Strong.transform.SetParent(enemiesParent);
-                        break;
-                }
-                break;
-            case TypeEnemy.Normal:
-                var NormalFenotype = Random.Range(0, 2);
-                switch (NormalFenotype)
-                {
-                    case 0:
-                        var Fast = Instantiate(enemyPrefab[3], RandomPostion(), Quaternion.identity);
-                        Fast.transform.SetParent(enemiesParent);
-                        break;
-                    case 1:
-                        var Normal = Instantiate(enemyPrefab[4], RandomPostion(), Quaternion.identity);
-                        Normal.transform.SetParent(enemiesParent);
-                        break;
-                    case 2:
-                        var Strong = Instantiate(enemyPrefab[5], RandomPostion(), Quaternion.identity);
-                        Strong.transform.SetParent(enemiesParent);
-                        break;
-                }
-                break;
-            case TypeEnemy.Aerial:
-                var AerialFenotype = Random.Range(0, 2);
-                switch (AerialFenotype)
-                {
-                    case 0:
-                        var Fast = Instantiate(enemyPrefab[6], RandomPostion(), Quaternion.identity);
-                        Fast.transform.SetParent(enemiesParent);
-                        break;
-                    case 1:
-                        var Normal = Instantiate(enemyPrefab[7], RandomPostion(), Quaternion.identity);
-                        Normal.transform.SetParent(enemiesParent);
-                        break;
-                    case 2:
-                        var Strong = Instantiate(enemyPrefab[8], RandomPostion(), Quaternion.identity);
-                        Strong.transform.SetParent(enemiesParent);
-                        break;
-                }
-                break;
-        }
     }
 
     Vector2 RandomPostion()
@@ -118,6 +60,64 @@ public class EnemyManager : MonoBehaviour
                 break;
             case 2:
                 typeEnemy = TypeEnemy.Aerial;
+                break;
+        }
+
+        switch (typeEnemy)
+        {
+            case TypeEnemy.Terrestrial:
+                var TerrestrialFenotype = Random.Range(0, 3);
+                switch (TerrestrialFenotype)
+                {
+                    case 0:
+                        var Fast = Instantiate(enemyPrefab[0], RandomPostion(), Quaternion.identity);
+                        Fast.transform.SetParent(enemiesParent);
+                        break;
+                    case 1:
+                        var Normal = Instantiate(enemyPrefab[1], RandomPostion(), Quaternion.identity);
+                        Normal.transform.SetParent(enemiesParent);
+                        break;
+                    case 2:
+                        var Strong = Instantiate(enemyPrefab[2], RandomPostion(), Quaternion.identity);
+                        Strong.transform.SetParent(enemiesParent);
+                        break;
+                }
+                break;
+            case TypeEnemy.Normal:
+                var NormalFenotype = Random.Range(0, 3);
+                switch (NormalFenotype)
+                {
+                    case 0:
+                        var Fast = Instantiate(enemyPrefab[3], RandomPostion(), Quaternion.identity);
+                        Fast.transform.SetParent(enemiesParent);
+                        break;
+                    case 1:
+                        var Normal = Instantiate(enemyPrefab[4], RandomPostion(), Quaternion.identity);
+                        Normal.transform.SetParent(enemiesParent);
+                        break;
+                    case 2:
+                        var Strong = Instantiate(enemyPrefab[5], RandomPostion(), Quaternion.identity);
+                        Strong.transform.SetParent(enemiesParent);
+                        break;
+                }
+                break;
+            case TypeEnemy.Aerial:
+                var AerialFenotype = Random.Range(0, 3);
+                switch (AerialFenotype)
+                {
+                    case 0:
+                        var Fast = Instantiate(enemyPrefab[6], RandomPostion(), Quaternion.identity);
+                        Fast.transform.SetParent(enemiesParent);
+                        break;
+                    case 1:
+                        var Normal = Instantiate(enemyPrefab[7], RandomPostion(), Quaternion.identity);
+                        Normal.transform.SetParent(enemiesParent);
+                        break;
+                    case 2:
+                        var Strong = Instantiate(enemyPrefab[8], RandomPostion(), Quaternion.identity);
+                        Strong.transform.SetParent(enemiesParent);
+                        break;
+                }
                 break;
         }
     }
