@@ -26,8 +26,10 @@ public class GunManager : MonoBehaviour
         gunPositions.Add(new Vector2(-0.25f, 0.7f));
         gunPositions.Add(new Vector2(0.75f, 0.7f));
 
+    }
+    private void Start()
+    {
         AddGun(selectedGun);
-        //AddGun(0);
     }
 
     private void Update()
@@ -51,12 +53,13 @@ public class GunManager : MonoBehaviour
         var pos = gunPositions[spawnedGuns];
 
         var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity);
+
         newGun.transform.SetParent(player);
         PlayerStats.Instance.weapons[gun] = newGun;
 
-        if (newGun.GetComponent<Gun>() != null)
+        if (newGun.GetComponent<Pistol>() != null)
         {
-            newGun.GetComponent<Gun>().SetOffset(pos);
+            newGun.GetComponent<Pistol>().SetOffset(pos);
         }
         else if (newGun.GetComponent<Shotgun>() != null)
         {

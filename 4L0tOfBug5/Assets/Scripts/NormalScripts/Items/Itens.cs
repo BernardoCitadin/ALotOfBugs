@@ -36,7 +36,6 @@ public class Itens : MonoBehaviour
     {
         PlayerStats.Instance.lifeMax += hpToAdd;
         AtckSpdRepairDmg += atckSpdToAdd;
-        Panel.SetActive(false);
 
         if (PlayerStats.Instance.money >= 2)
         {
@@ -54,7 +53,6 @@ public class Itens : MonoBehaviour
 
         AtckSpdRepairDmg -= atckSpdToAdd;
 
-        Panel.SetActive(false);
         if (PlayerStats.Instance.money >= 3)
         {
             PlayerStats.Instance.Cost(3);
@@ -65,7 +63,6 @@ public class Itens : MonoBehaviour
         //Bullet.Instance.damage += stghToAdd;
         Bullet.Instance.damage += stghToAdd;
         PlayerMovement.Instance.speed -= spdToAdd;
-        Panel.SetActive(false);
 
         if (PlayerStats.Instance.money >= 4)
         {
@@ -78,7 +75,6 @@ public class Itens : MonoBehaviour
         PlayerMovement.Instance.speed += spdToAdd;
         PlayerStats.Instance.life -= hpToAdd;
         PlayerStats.Instance.lifeMax -= hpToAdd;
-        Panel.SetActive(false);
 
         if (PlayerStats.Instance.money >= 1)
         {
@@ -89,7 +85,6 @@ public class Itens : MonoBehaviour
     public void regenItem()
     {
         PlayerStats.Instance.life += regenValue;
-        Panel.SetActive(false);
 
         if (PlayerStats.Instance.money >= 1)
         {
