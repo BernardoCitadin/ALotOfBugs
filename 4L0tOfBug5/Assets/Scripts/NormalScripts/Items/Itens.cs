@@ -19,11 +19,6 @@ public class Itens : MonoBehaviour
         Instance = this;
     }
 
-    private void Update()
-    {
-        Gun.Instance.fireRate = AtckSpdRepairDmg;
-    }
-
     public void ItemActivate()
     {
         hpToAdd = Random.Range(5, 15);
