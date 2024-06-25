@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -18,12 +19,13 @@ public class PlayerStats : MonoBehaviour
 
     public List<GameObject> weapons;
 
+
     private void Awake()
     {
         Instance = this;
         life = lifeMax;
     }
-
+    
     private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -83,6 +85,7 @@ public class PlayerStats : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 panelRestart.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
@@ -102,5 +105,10 @@ public class PlayerStats : MonoBehaviour
     public int GetLife()
     {
         return life;
+    }
+
+    public void ResetPos()
+    {
+        gameObject.transform.position = Vector3.zero;
     }
 }

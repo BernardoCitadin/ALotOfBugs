@@ -57,9 +57,9 @@ public class WaveManager : MonoBehaviour
     {
         StopAllCoroutines();
         waveRunning = false;
-        Pause();
         timeText.color = Color.red;
         EndWave.Invoke();
+        Pause();
     }
 
     public void Pause()

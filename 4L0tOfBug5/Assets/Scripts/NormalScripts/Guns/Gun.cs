@@ -9,7 +9,6 @@ public abstract class Gun : MonoBehaviour
     [SerializeField] public float fireRate;
 
     public Vector2 offset;
-    SpriteRenderer spg;
 
     [Header("Shot Settings")]
     public float lastShotTime;

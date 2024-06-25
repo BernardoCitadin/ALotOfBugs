@@ -48,14 +48,13 @@ public class GunManager : MonoBehaviour
         }
     }
 
-    void AddGun(int gun)
+    public void AddGun(int gun)
     {
         var pos = gunPositions[spawnedGuns];
 
         var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity);
 
         newGun.transform.SetParent(player);
-        PlayerStats.Instance.weapons[gun] = newGun;
 
         if (newGun.GetComponent<Pistol>() != null)
         {

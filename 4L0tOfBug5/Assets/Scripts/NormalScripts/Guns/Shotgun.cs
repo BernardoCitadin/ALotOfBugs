@@ -11,13 +11,11 @@ public class Shotgun : Gun
     
     //public SpriteRenderer spg;
 
-    Animator anim;
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         bullets = GameObject.FindGameObjectWithTag("Bullets").transform;
-        anim = GetComponent<Animator>();
+        bullets = GameObject.FindGameObjectWithTag("Bullets").transform;
         lastShotTime = fireRate;
     }
 
