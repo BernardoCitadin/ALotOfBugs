@@ -29,17 +29,24 @@ public class Itens : MonoBehaviour
 
     public void hpItem()
     {
-        PlayerStats.Instance.lifeMax += hpToAdd;
-        AtckSpdRepairDmg += atckSpdToAdd;
-
         if (PlayerStats.Instance.money >= 2)
         {
             PlayerStats.Instance.Cost(2);
         }
+        else
+            return;
+        PlayerStats.Instance.lifeMax += hpToAdd;
+        AtckSpdRepairDmg += atckSpdToAdd;
     }
 
     public void atckSpdItem()
     {
+        if (PlayerStats.Instance.money >= 3)
+        {
+            PlayerStats.Instance.Cost(3);
+        }
+        else
+            return;
         if (Bullet.Instance.damage > stghToAdd)
         {
             Bullet.Instance.damage -= stghToAdd;
@@ -47,53 +54,46 @@ public class Itens : MonoBehaviour
         else Bullet.Instance.damage = 1;
 
         AtckSpdRepairDmg -= atckSpdToAdd;
-
-        if (PlayerStats.Instance.money >= 3)
-        {
-            PlayerStats.Instance.Cost(3);
-        }
     }
     public void stghItem()
     {
-        //Bullet.Instance.damage += stghToAdd;
-        Bullet.Instance.damage += stghToAdd;
-        PlayerMovement.Instance.speed -= spdToAdd;
-
         if (PlayerStats.Instance.money >= 4)
         {
             PlayerStats.Instance.Cost(4);
         }
+        else
+            return;
+        //Bullet.Instance.damage += stghToAdd;
+        Bullet.Instance.damage += stghToAdd;
+        PlayerMovement.Instance.speed -= spdToAdd;
     }
 
     public void spdItem()
     {
-        PlayerMovement.Instance.speed += spdToAdd;
-        PlayerStats.Instance.life -= hpToAdd;
-        PlayerStats.Instance.lifeMax -= hpToAdd;
-
         if (PlayerStats.Instance.money >= 1)
         {
             PlayerStats.Instance.Cost(1);
         }
+        else
+            return;
+        PlayerMovement.Instance.speed += spdToAdd;
+        PlayerStats.Instance.life -= hpToAdd;
+        PlayerStats.Instance.lifeMax -= hpToAdd;
     }
 
     public void regenItem()
     {
-        PlayerStats.Instance.life += regenValue;
-
         if (PlayerStats.Instance.money >= 1)
         {
             PlayerStats.Instance.Cost(1);
         }
+        else
+            return;
+        PlayerStats.Instance.life += regenValue;
     }
     
     public void restoreAllHp()
     {
         PlayerStats.Instance.life = PlayerStats.Instance.lifeMax;
-
-        if (PlayerStats.Instance.money >= 5)
-        {
-            PlayerStats.Instance.Cost(5);
-        }
     }
 }
