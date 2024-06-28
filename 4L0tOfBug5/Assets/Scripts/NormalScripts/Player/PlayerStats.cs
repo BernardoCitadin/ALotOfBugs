@@ -7,6 +7,7 @@ public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats Instance;
     public int nivel = 1;
+    public int passedLevels = 0;
     public static int xp = 0, xpToNextLevel = 5;
     public GameObject panelRestart;
     public int money = 0;
@@ -50,11 +51,11 @@ public class PlayerStats : MonoBehaviour
         if (xp >= xpToNextLevel)
         {
             PlayerStats.Instance.nivel++;
+            PlayerStats.Instance.passedLevels++;
             xp = 0;
             xpToNextLevel += PlayerStats.Instance.xpIncrease;
             HUD.instance.SetXp();
             HUD.instance.SetLevel();
-            PlayerStats.Instance.OnLevelUp.Invoke();
         }
     }
 
