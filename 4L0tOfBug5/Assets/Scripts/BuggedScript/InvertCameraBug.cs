@@ -5,7 +5,11 @@ public class InvertCameraBug : MonoBehaviour
     public Transform cvCamRotate;
     public Transform playerObj;
 
-    private void Start()
+    private void OnBecameVisible()
+    {
+        Rotate();
+    }
+    private void OnBecameInvisible()
     {
         Rotate();
     }

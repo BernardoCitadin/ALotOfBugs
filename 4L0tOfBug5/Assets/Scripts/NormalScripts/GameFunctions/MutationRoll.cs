@@ -19,17 +19,18 @@ public class MutationRoll : MonoBehaviour
             switch (m)
             {
                 case 0:
-                    button_Text.text = "Mutation 1";
+                    button_Text.text = "Invert Camera";
                     mutation = Mutation.mutation1;
                     break;
                 case 1:
-                    button_Text.text = "Mutation 2";
+                    button_Text.text = "Lag";
                     mutation = Mutation.mutation2;
                     break;
                 case 2:
-                    button_Text.text = "Mutation 3";
+                    button_Text.text = "Invisible Player";
                     mutation = Mutation.mutation3;
                     break;
+                /*
                 case 3:
                     button_Text.text = "Mutation 4";
                     mutation = Mutation.mutation4;
@@ -38,6 +39,7 @@ public class MutationRoll : MonoBehaviour
                     button_Text.text = "Mutation 5";
                     mutation = Mutation.mutation5;
                     break;
+                */
             }
 
         }

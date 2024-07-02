@@ -2,8 +2,16 @@ using UnityEngine;
 
 public class LaggingBug : MonoBehaviour
 {
-    public void LagMutation()
+    private void OnBecameInvisible()
     {
-        Application.targetFrameRate = 10;
+        LagMutation(60);
+    }
+    private void OnBecameVisible()
+    {
+        LagMutation(10);
+    }
+    public void LagMutation(int frameRate)
+    {
+        Application.targetFrameRate = frameRate;
     }
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Playables;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class PlayerStats : MonoBehaviour
     {
         Instance = this;
         life = lifeMax;
+        Application.targetFrameRate = 60;
     }
     
     private void Update()
