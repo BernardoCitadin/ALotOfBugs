@@ -20,11 +20,12 @@ public abstract class Gun : MonoBehaviour
 
     [Header("Set Melee Weapon")]
     [SerializeField] bool isMelee;
+    
+    public SpriteRenderer gunSprite;
     private void Awake()
     {
         Instance = this;
     }
-
     protected virtual void FindCloseEnemy()
     {
         closeEnemy = null;

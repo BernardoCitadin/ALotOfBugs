@@ -24,7 +24,6 @@ public class PlayerStats : MonoBehaviour
     {
         Instance = this;
         life = lifeMax;
-        Application.targetFrameRate = 60;
     }
     
     private void Update()

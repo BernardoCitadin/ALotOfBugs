@@ -25,17 +25,19 @@ public class Shotgun : Gun
         FindCloseEnemy();
         Aim();
         Shooting();
-        /*
 
-        if (angle <= 90)
+        if (closeEnemy == null)
         {
-            spg.flipY = true;
+            return;
         }
-        else if (angle > 90)
+        if (closeEnemy.position.x > player.position.x)
         {
-            spg.flipY = false;
+            gameObject.transform.localScale = new Vector3(.5f, .5f, 1);
         }
-        */
+        if (closeEnemy.position.x < player.position.x)
+        {
+            gameObject.transform.localScale = new Vector3(.5f, -.5f, 1);
+        }
     }
 
     protected override void Shoot()

@@ -265,11 +265,12 @@ MonoBehaviour:
   closeEnemy: {fileID: 0}
   angle: 0
   isMelee: 0
+  gunSprite: {fileID: 0}
   muzzle: {fileID: 8654612687090720036, guid: 614513c3b8aceb945a1c6b42b11b2dd0, type: 3}
   muzzlePosition:
   - {fileID: 7073766592047440223}
   - {fileID: 7073766591841230606}
   - {fileID: 7073766592452960387}
   - {fileID: 7073766591319477189}
-  projectile: {fileID: 6584486029039868954, guid: b554e5cb9414c794786771b83b40ba5f, type: 3}
+  projectile: {fileID: 6584486029039868954, guid: 6902be8ea0fd22f4692e3ac91c2d5ec0, type: 3}
   bullets: {fileID: 0}

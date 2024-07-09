@@ -135,12 +135,14 @@ MonoBehaviour:
   fireRate: 0.5
   offset: {x: 0, y: 0}
   lastShotTime: 0
+  closeEnemy: {fileID: 0}
   angle: 0
+  isMelee: 0
+  gunSprite: {fileID: 3822634903431577525}
   muzzle: {fileID: 8654612687090720036, guid: 614513c3b8aceb945a1c6b42b11b2dd0, type: 3}
   muzzlePosition: {fileID: 4969348017367838473}
   projectile: {fileID: 6584486029039868954, guid: b554e5cb9414c794786771b83b40ba5f, type: 3}
   bullets: {fileID: 0}
-  spg: {fileID: 3822634903431577525}
 --- !u!1 &8968940395876400925
 GameObject:
   m_ObjectHideFlags: 0

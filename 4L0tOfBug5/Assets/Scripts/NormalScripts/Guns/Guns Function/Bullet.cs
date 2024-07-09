@@ -7,8 +7,9 @@ public class Bullet : MonoBehaviour
     [SerializeField]float speed = 12f;
     public static Bullet Instance;
 
-    [Header("Melee")]
+    [Header("MeleeNPenetrate")]
     [SerializeField] bool IsMelee;
+    [SerializeField] bool IsPrenetating;
 
 
     private void Awake()
@@ -24,9 +25,13 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var enemy = other.gameObject.GetComponent<Enemy>();
-        if (enemy != null && !IsMelee)
+        if (enemy != null && !IsMelee && !IsPrenetating)
         {
             Destroy(gameObject);
+            enemy.TakeDamage(damage);
+        }
+        if (enemy != null && !IsMelee && IsPrenetating)
+        {
             enemy.TakeDamage(damage);
         }
 
