@@ -11754,7 +11754,7 @@ GameObject:
   - component: {fileID: 324581135}
   - component: {fileID: 324581134}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: SniperButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11832,7 +11832,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -37820,7 +37820,7 @@ GameObject:
   - component: {fileID: 558873759}
   - component: {fileID: 558873758}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: PistolButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38130,7 +38130,7 @@ GameObject:
   - component: {fileID: 640337799}
   - component: {fileID: 640337798}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: UziButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38208,7 +38208,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -40217,7 +40217,7 @@ GameObject:
   - component: {fileID: 1092613123}
   - component: {fileID: 1092613122}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SwordButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41341,7 +41341,7 @@ GameObject:
   - component: {fileID: 1358477606}
   - component: {fileID: 1358477605}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: ShotgunButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42047,7 +42047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2044040445250382965, guid: 944288f88a1a3e74ebe92bde246f79dd, type: 3}
       propertyPath: gunPrefabs.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2044040445250382965, guid: 944288f88a1a3e74ebe92bde246f79dd, type: 3}
       propertyPath: gunPrefabs.Array.data[0]
@@ -42065,6 +42065,14 @@ PrefabInstance:
       propertyPath: gunPrefabs.Array.data[3]
       value: 
       objectReference: {fileID: 7073766592641727610, guid: f021c703b53fdfe4783414a32805db8e, type: 3}
+    - target: {fileID: 2044040445250382965, guid: 944288f88a1a3e74ebe92bde246f79dd, type: 3}
+      propertyPath: gunPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 7463338980260055858, guid: b6d0efb5ebe70784ab5f6dabfe0a3a1d, type: 3}
+    - target: {fileID: 2044040445250382965, guid: 944288f88a1a3e74ebe92bde246f79dd, type: 3}
+      propertyPath: gunPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 2825569025740785192, guid: c884c70d9b08a344fb4d9be8bf122af1, type: 3}
     - target: {fileID: 2044040445250382966, guid: 944288f88a1a3e74ebe92bde246f79dd, type: 3}
       propertyPath: m_Name
       value: GunManager
@@ -44068,7 +44076,7 @@ GameObject:
   - component: {fileID: 1888007748}
   - component: {fileID: 1888007747}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: LanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

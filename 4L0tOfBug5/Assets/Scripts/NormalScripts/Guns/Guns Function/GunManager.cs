@@ -7,11 +7,11 @@ public class GunManager : MonoBehaviour
     [SerializeField] GameObject[] gunPrefabs;
     [SerializeField] Transform player;
 
+    public static GunManager Instance;
     List<Vector2> gunPositions = new List<Vector2>();
 
-    int spawnedGuns = 0;
-
-    public int selectedGun;
+    [HideInInspector]public int spawnedGuns = 0;
+    [HideInInspector]public int selectedGun;
 
     private void Awake()
     {
@@ -26,6 +26,8 @@ public class GunManager : MonoBehaviour
         gunPositions.Add(new Vector2(-0.25f, 0.7f));
         gunPositions.Add(new Vector2(0.75f, 0.7f));
 
+        Instance = this;
+
     }
     private void Start()
     {
@@ -34,17 +36,29 @@ public class GunManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            AddGun(0);
+        }        
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            AddGun(1);
+        }        
+        if (Input.GetKeyDown(KeyCode.C))
         {
             AddGun(2);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
+        }        
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            AddGun(3);
+        }        
+        if (Input.GetKeyDown(KeyCode.B))
         {
             AddGun(4);
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.N))
         {
-            AddGun(0);
+            AddGun(5);
         }
     }
 

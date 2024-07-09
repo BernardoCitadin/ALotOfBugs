@@ -2,11 +2,11 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    public int life;
+    public float life;
     public float speed;
     protected Rigidbody2D body;
     public GameObject xp;
-    public int damage;
+    public float damage;
     public Transform _target;
     public Transform EnemyTransform;
 
@@ -25,7 +25,7 @@ public abstract class Enemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _target.position, speed * Time.deltaTime);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         life -= damage;
         if (life <= 0)

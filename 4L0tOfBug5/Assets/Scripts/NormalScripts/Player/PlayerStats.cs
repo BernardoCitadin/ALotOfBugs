@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using UnityEngine.Playables;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class PlayerStats : MonoBehaviour
 
     public int xpIncrease = 10, lifeMax = 100;
     public static int luck;
-    public int life;
+    public float life;
 
     public UnityEvent OnPause, OnUnpause, OnLevelUp;
 
@@ -105,7 +103,7 @@ public class PlayerStats : MonoBehaviour
         HUD.instance.SetMoney();
 
     }
-    public int GetLife()
+    public float GetLife()
     {
         return life;
     }
