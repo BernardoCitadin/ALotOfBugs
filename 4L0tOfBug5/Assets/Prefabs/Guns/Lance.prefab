@@ -53,6 +53,7 @@ MonoBehaviour:
   closeEnemy: {fileID: 0}
   angle: 0
   isMelee: 1
+  gunSprite: {fileID: 0}
   anim: {fileID: 7723629453268947235}
 --- !u!1 &7723629453268947246
 GameObject:
@@ -68,6 +69,7 @@ GameObject:
   - component: {fileID: 7723629453268947234}
   - component: {fileID: 7723629453268947237}
   - component: {fileID: 7723629453268947236}
+  - component: {fileID: 7442176699117243946}
   m_Layer: 0
   m_Name: SwordObj
   m_TagString: Untagged
@@ -82,14 +84,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7723629453268947246}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5000004, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7723629452378886737}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!212 &7723629453268947233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8e965dfdab5e374baef117087b7bc82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -177,6 +179,7 @@ MonoBehaviour:
   damage: 15
   speed: 0
   IsMelee: 1
+  IsPrenetating: 0
 --- !u!61 &7723629453268947237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,18 +193,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.2, y: 1.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.5, y: 2.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &7723629453268947236
 MonoBehaviour:
@@ -216,3 +219,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sword: {fileID: 7723629452378886737}
+--- !u!68 &7442176699117243946
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723629453268947246}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 1.1926311, y: 1.2036179}
+  - {x: 1.1896677, y: 1.1170847}
+  - {x: 1.1850606, y: 1.088746}
+  - {x: 1.0354218, y: 0.698787}
+  - {x: 0.68909645, y: 0.49849698}
+  - {x: -0.13705182, y: -0.35294935}
+  - {x: -0.34953246, y: -0.13545835}
+  - {x: 0.6960894, y: 1.0029451}
+  - {x: 0.9368882, y: 1.1433324}
+  - {x: 1.0689877, y: 1.1960043}
+  - {x: 1.1840703, y: 1.1973144}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
