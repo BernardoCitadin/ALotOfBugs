@@ -52,6 +52,9 @@ TagManager:
   - name: Enemy
     uniqueID: 2118140405
     locked: 0
+  - name: Gun
+    uniqueID: 2709599887
+    locked: 0
   - name: Player
     uniqueID: 1881349389
     locked: 0

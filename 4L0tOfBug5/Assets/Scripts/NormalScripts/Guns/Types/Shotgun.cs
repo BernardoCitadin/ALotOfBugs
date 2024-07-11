@@ -32,11 +32,11 @@ public class Shotgun : Gun
         }
         if (closeEnemy.position.x > player.position.x)
         {
-            gameObject.transform.localScale = new Vector3(.5f, .5f, 1);
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
         if (closeEnemy.position.x < player.position.x)
         {
-            gameObject.transform.localScale = new Vector3(.5f, -.5f, 1);
+            gameObject.transform.localScale = new Vector3(1, -1, 1);
         }
     }
 
