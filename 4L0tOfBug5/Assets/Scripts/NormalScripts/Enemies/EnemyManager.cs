@@ -16,6 +16,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]TypeEnemy typeEnemy;
 
     Transform enemiesParent;
+    public Transform playerPosition;
 
     public static EnemyManager Instance;
 
