@@ -14,6 +14,9 @@ public class PlayerStats : MonoBehaviour
     public int xpIncrease = 10, lifeMax = 100;
     public static int luck;
     public float life;
+    public int timeToRegen = 3;
+    public float timerRegen;
+    public float regen = 2f;
 
     public UnityEvent OnPause, OnUnpause, OnLevelUp;
 
@@ -28,6 +31,11 @@ public class PlayerStats : MonoBehaviour
     
     private void Update()
     {
+        timerRegen += Time.deltaTime;
+        if (timerRegen >= timeToRegen)
+        {
+            life += regen;
+        }
         if (Input.GetButtonDown("Cancel"))
         {
             if (Time.timeScale == 0)
@@ -41,6 +49,7 @@ public class PlayerStats : MonoBehaviour
                 OnPause.Invoke();
             }
         }
+
     }
 
     public static void GainXp(int xpGain)
