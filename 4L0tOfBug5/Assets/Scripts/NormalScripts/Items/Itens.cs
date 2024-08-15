@@ -17,7 +17,7 @@ public class Itens : MonoBehaviour
         Instance = this;
     }
 
-    public void ItemActivate()
+    public void ItemRoll()
     {
         hpToAdd = Random.Range(5, 15);
         spdToAdd = Random.Range(0.3f, 0.6f);

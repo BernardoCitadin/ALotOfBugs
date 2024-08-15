@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_Text: {fileID: 1416201881}
+  mutation: 0
 --- !u!1 &7231279
 GameObject:
   m_ObjectHideFlags: 0
@@ -12448,6 +12449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_Text: {fileID: 818560671}
+  mutation: 0
 --- !u!1 &437309496
 GameObject:
   m_ObjectHideFlags: 0
@@ -38822,10 +38824,10 @@ MonoBehaviour:
   EndWave:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1427583129}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1872913495}
+        m_TargetAssemblyTypeName: Itens, Assembly-CSharp
+        m_MethodName: ItemRoll
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -38834,10 +38836,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1872913495}
-        m_TargetAssemblyTypeName: Itens, Assembly-CSharp
-        m_MethodName: ItemActivate
-        m_Mode: 1
+      - m_Target: {fileID: 1427583129}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -39211,6 +39213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_Text: {fileID: 1588144552}
+  mutation: 0
 --- !u!1 &859440163
 GameObject:
   m_ObjectHideFlags: 0

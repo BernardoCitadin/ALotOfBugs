@@ -9,7 +9,7 @@ public class ItemActiv : MonoBehaviour
         {
             Panel.SetActive(true);
             Destroy(collision.gameObject);
-            Itens.Instance.ItemActivate();
+            //Itens.Instance.ItemActivate();
         }
     }
 }
