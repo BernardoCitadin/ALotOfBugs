@@ -628,6 +628,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 6491719073705439571, guid: 9a49ba15f0d721541b43b532edf24576, type: 3}
+      propertyPath: pistolAudios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491719073705439571, guid: 9a49ba15f0d721541b43b532edf24576, type: 3}
+      propertyPath: pistolAudios.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a49ba15f0d721541b43b532edf24576, type: 3}
 --- !u!1001 &1542393710

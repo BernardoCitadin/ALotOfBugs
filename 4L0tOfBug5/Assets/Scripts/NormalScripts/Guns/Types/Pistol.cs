@@ -8,6 +8,9 @@ public class Pistol : Gun
     [Header("Bullets Settings")]
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
+
+    public AudioSource[] pistolAudios = new AudioSource[0];
+
     public static Pistol instance;
     Animator anim;
 
@@ -46,6 +49,7 @@ public class Pistol : Gun
     }
     protected override void Shoot()
     {
+        pistolAudios[0].Play();
         var muzzleGo = Instantiate(muzzle, muzzlePosition.position, transform.rotation);
         muzzleGo.transform.SetParent(transform);
         Destroy(muzzleGo, 0.05f);
