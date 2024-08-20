@@ -8,7 +8,9 @@ public class Shotgun : Gun
     [Header("Bullets Settings")]
     [SerializeField] GameObject projectile;
     [SerializeField] Transform bullets;
-    
+
+    public AudioSource[] shotgunAudios = new AudioSource[0];
+
     //public SpriteRenderer spg;
 
     void Start()
@@ -42,6 +44,7 @@ public class Shotgun : Gun
 
     protected override void Shoot()
     {
+        shotgunAudios[0].Play();
         var muzzleGo = Instantiate(muzzle, muzzlePosition[0].position, transform.rotation, player);
         muzzleGo.transform.SetParent(transform);
         Destroy(muzzleGo, 0.05f);
