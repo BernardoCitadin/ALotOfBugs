@@ -44111,11 +44111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17eedd0756361fd4aad1e7303ca5cbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpToAdd: 0
-  stghToAdd: 0
-  atckSpdToAdd: 0
-  spdToAdd: 0
-  regenValue: 25
+  allItens: []
+  chosingItens: []
   Panel: {fileID: 1964226007}
 --- !u!1 &1888007745
 GameObject:
