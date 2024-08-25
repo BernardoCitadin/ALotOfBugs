@@ -31,10 +31,13 @@ public class PlayerStats : MonoBehaviour
     
     private void Update()
     {
+        HUD.instance.SetLife();
+
         timerRegen += Time.deltaTime;
         if (timerRegen >= timeToRegen)
         {
             life += regen;
+            timerRegen = 0;
         }
         if (Input.GetButtonDown("Cancel"))
         {
@@ -89,7 +92,6 @@ public class PlayerStats : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             life -= collision.gameObject.GetComponent<Enemy>().damage;
-            HUD.instance.SetLife();
             if (life <= 0)
             {
                 gameObject.SetActive(false);

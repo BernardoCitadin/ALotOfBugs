@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7723629452378886737}
   - component: {fileID: 7723629452378886736}
+  - component: {fileID: 8368844318784382030}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -54,7 +55,105 @@ MonoBehaviour:
   angle: 0
   isMelee: 1
   gunSprite: {fileID: 0}
+  swordAudios:
+  - {fileID: 8368844318784382030}
   anim: {fileID: 7723629453268947235}
+--- !u!82 &8368844318784382030
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723629452378886750}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a325186ce1f65a0448e23ee8cb95a24e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7723629453268947246
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +167,7 @@ GameObject:
   - component: {fileID: 7723629453268947235}
   - component: {fileID: 7723629453268947234}
   - component: {fileID: 7723629453268947236}
-  - component: {fileID: 2347607607173881200}
+  - component: {fileID: 4106780395187834247}
   m_Layer: 0
   m_Name: SwordObj
   m_TagString: Untagged
@@ -132,12 +231,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b759667c1c7d56743bd7d8786e626717, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee940c4d59e3fee4b8210d5ec2ede4c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.1875, y: 2.1875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -192,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sword: {fileID: 7723629452378886737}
---- !u!68 &2347607607173881200
+--- !u!68 &4106780395187834247
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,91 +301,21 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.12512869, y: -0.12485036}
-  - {x: -0.21887408, y: -0.12473898}
-  - {x: -0.21850453, y: -0.09378774}
-  - {x: -0.31246465, y: -0.09374686}
-  - {x: -0.312457, y: -0.061898697}
-  - {x: -0.31178188, y: -0.03122063}
-  - {x: -0.28144953, y: -0.03073242}
-  - {x: -0.28129184, y: 0.000043682754}
-  - {x: -0.18788534, y: -0.00017320737}
-  - {x: -0.18788399, y: 0.030742563}
-  - {x: -0.12566832, y: 0.030621603}
-  - {x: -0.12552428, y: 0.12523828}
-  - {x: -0.09470476, y: 0.12426123}
-  - {x: -0.09411463, y: 0.18644877}
-  - {x: -0.062746786, y: 0.18801726}
-  - {x: -0.06307744, y: 0.21875802}
-  - {x: -0.031515162, y: 0.21895722}
-  - {x: -0.031599645, y: 0.2503066}
-  - {x: -0.0008144211, y: 0.24967849}
-  - {x: -0.00044085504, y: 0.28145495}
-  - {x: 0.03131628, y: 0.28091943}
-  - {x: 0.030994251, y: 0.3121507}
-  - {x: 0.09322589, y: 0.3120343}
-  - {x: 0.09357259, y: 0.34375328}
-  - {x: 0.124361925, y: 0.3434136}
-  - {x: 0.1251741, y: 0.3749743}
-  - {x: 0.15666313, y: 0.37497413}
-  - {x: 0.15604602, y: 0.4375186}
-  - {x: 0.18762812, y: 0.43755043}
-  - {x: 0.18741079, y: 0.46872413}
-  - {x: 0.21881092, y: 0.46866107}
-  - {x: 0.21890627, y: 0.5001441}
-  - {x: 0.25025117, y: 0.5001332}
-  - {x: 0.25043082, y: 0.53176594}
-  - {x: 0.31275827, y: 0.53210706}
-  - {x: 0.31236115, y: 0.562503}
-  - {x: 0.40615207, y: 0.56263906}
-  - {x: 0.40625858, y: 0.5937824}
-  - {x: 0.4685939, y: 0.5938326}
-  - {x: 0.46867013, y: 0.5624298}
-  - {x: 0.50015444, y: 0.56224495}
-  - {x: 0.5007607, y: 0.46777722}
-  - {x: 0.4688254, y: 0.4709132}
-  - {x: 0.4692626, y: 0.4380172}
-  - {x: 0.43850586, y: 0.43760037}
-  - {x: 0.4388364, y: 0.25152093}
-  - {x: 0.4067133, y: 0.25163177}
-  - {x: 0.40658665, y: 0.124684885}
-  - {x: 0.3752717, y: 0.12602773}
-  - {x: 0.37655938, y: 0.09516952}
-  - {x: 0.34392276, y: 0.09477481}
-  - {x: 0.3442066, y: 0.062513664}
-  - {x: 0.31267944, y: 0.06264192}
-  - {x: 0.31147856, y: 0.030949034}
-  - {x: 0.2814383, y: 0.03184027}
-  - {x: 0.28230694, y: 0.00009051524}
-  - {x: 0.21796232, y: 0.0007426664}
-  - {x: 0.21757457, y: 0.031376682}
-  - {x: 0.12583292, y: 0.031248864}
-  - {x: 0.12499847, y: 0.00093100406}
-  - {x: 0.09429847, y: 0.00021609757}
-  - {x: 0.09413553, y: -0.031362772}
-  - {x: 0.06261219, y: -0.031914387}
-  - {x: 0.062248766, y: -0.12460421}
-  - {x: 0.094415545, y: -0.12467274}
-  - {x: 0.093782835, y: -0.18752493}
-  - {x: 0.06247711, y: -0.18747246}
-  - {x: 0.0623655, y: -0.21899544}
-  - {x: 0.031179804, y: -0.21855192}
-  - {x: 0.03139504, y: -0.250176}
-  - {x: -0.00012353249, y: -0.25016087}
-  - {x: 0.00024838, y: -0.28153396}
-  - {x: -0.031355157, y: -0.28149748}
-  - {x: -0.031453885, y: -0.31105942}
-  - {x: -0.0945159, y: -0.31187907}
-  - {x: -0.093819, y: -0.21840194}
-  - {x: -0.093651496, y: -0.18736838}
-  - {x: -0.12492433, y: -0.18733925}
-  - {x: -0.124941915, y: -0.12507182}
+  - {x: -0.2784776, y: -0.3419381}
+  - {x: -0.45666534, y: -0.06933324}
+  - {x: 0.65955263, y: 1.0309614}
+  - {x: 0.96903783, y: 1.0336248}
+  - {x: 0.968854, y: 0.9688209}
+  - {x: 1.0310037, y: 0.9687722}
+  - {x: 1.0317497, y: 0.6571807}
+  - {x: -0.026964664, y: -0.39124107}
+  - {x: -0.27920365, y: -0.34021315}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
