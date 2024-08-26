@@ -42,9 +42,25 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    Vector2 RandomPostion()
+    public Vector2 RandomPostion()
     {
-        return new Vector2(Random.Range(-16, 16), Random.Range(-8, 8));
+        float randomSpawners;
+        Vector2 randomSpawned = Vector2.zero;
+        randomSpawners = Random.Range(0, 3);
+        switch (randomSpawners)
+        {
+            case 0:
+                return randomSpawned = new Vector2(-15, 0);
+            case 1:
+                return randomSpawned = new Vector2(0, -8);
+            case 2:
+                return randomSpawned = new Vector2(0, 8);
+            case 3:
+                return randomSpawned = new Vector2(15, 0);
+
+        }
+        return randomSpawned;
+        //return new Vector2(Random.Range(-16, 16), Random.Range(-8, 8));
     }
 
     void SpawnEnemy()
