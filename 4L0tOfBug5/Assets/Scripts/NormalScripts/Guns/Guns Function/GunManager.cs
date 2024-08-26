@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GunChose
+{
+    pistol, shotgun, uzi, sniper, sword, lance
+}
+
 public class GunManager : MonoBehaviour
 {
     [SerializeField] GameObject[] gunPrefabs;
@@ -12,6 +17,8 @@ public class GunManager : MonoBehaviour
 
     [HideInInspector]public int spawnedGuns = 0;
     [HideInInspector]public int selectedGun;
+
+    public GunChose gunChose;
 
     private void Awake()
     {
@@ -83,6 +90,33 @@ public class GunManager : MonoBehaviour
             newGun.GetComponent<Sword>().SetOffset(pos);
         }
         spawnedGuns++;
+
+        switch (gun)
+        {
+            case 0:
+                gunChose = GunChose.sword;
+                break;
+                
+            case 1:
+                gunChose = GunChose.lance;
+                break;
+
+            case 2:
+                gunChose = GunChose.pistol;
+                break;
+
+            case 3:
+                gunChose = GunChose.shotgun;
+                break;
+
+            case 4:
+                gunChose = GunChose.uzi;
+                break;
+
+            case 5:
+                gunChose = GunChose.sniper;
+                break;
+        }
     }
     public void SelectGun(int gun)
     {

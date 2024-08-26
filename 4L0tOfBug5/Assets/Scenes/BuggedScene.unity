@@ -661,7 +661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &103234870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10722,7 +10722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.225, y: -301.85614}
+  m_AnchoredPosition: {x: 960.225, y: -241.67499}
   m_SizeDelta: {x: 250, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &211654687
@@ -10771,7 +10771,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872913495}
         m_TargetAssemblyTypeName: Itens, Assembly-CSharp
-        m_MethodName: hpItem
+        m_MethodName: IncreaseLife
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1872913495}
+        m_TargetAssemblyTypeName: Itens, Assembly-CSharp
+        m_MethodName: restoreAllHp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10993,7 +11005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 439.775, y: -301.85614}
+  m_AnchoredPosition: {x: 439.775, y: -241.67499}
   m_SizeDelta: {x: 250, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220502190
@@ -11042,12 +11054,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872913495}
         m_TargetAssemblyTypeName: Itens, Assembly-CSharp
-        m_MethodName: regenItem
-        m_Mode: 1
+        m_MethodName: IncreaseRegen
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11127,7 +11139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -600.18115}
+  m_AnchoredPosition: {x: 200, y: -540}
   m_SizeDelta: {x: 250, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253118501
@@ -11176,12 +11188,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872913495}
         m_TargetAssemblyTypeName: Itens, Assembly-CSharp
-        m_MethodName: stghItem
-        m_Mode: 1
+        m_MethodName: IncreaseStrength
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39970,7 +39982,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1200, y: -600.18115}
+  m_AnchoredPosition: {x: 1200, y: -540}
   m_SizeDelta: {x: 250, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013222749
@@ -40019,12 +40031,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872913495}
         m_TargetAssemblyTypeName: Itens, Assembly-CSharp
-        m_MethodName: spdItem
-        m_Mode: 1
+        m_MethodName: IncreaseSpeed
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40239,7 +40251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 700, y: -600.18115}
+  m_AnchoredPosition: {x: 700, y: -540}
   m_SizeDelta: {x: 250, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058790476
@@ -40288,12 +40300,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1872913495}
         m_TargetAssemblyTypeName: Itens, Assembly-CSharp
-        m_MethodName: atckSpdItem
-        m_Mode: 1
+        m_MethodName: IncreaseAtackSpeed
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -44271,8 +44283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17eedd0756361fd4aad1e7303ca5cbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allItens: []
-  chosingItens: []
+  speedIncreases: 0
+  regenIncreases: 0
+  lifeIncreases: 0
   Panel: {fileID: 1964226007}
 --- !u!1 &1888007745
 GameObject:

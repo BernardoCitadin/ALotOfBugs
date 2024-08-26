@@ -6,7 +6,7 @@ public class Pistol : Gun
     [SerializeField] GameObject muzzle;
     [SerializeField] Transform muzzlePosition;
     [Header("Bullets Settings")]
-    [SerializeField] GameObject projectile;
+    [SerializeField]public GameObject projectile;
     [SerializeField] Transform bullets;
 
     public AudioSource[] pistolAudios = new AudioSource[0];

@@ -11,7 +11,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject panelRestart;
     public int money = 0;
 
-    public int xpIncrease = 10, lifeMax = 100;
+    public int xpIncrease = 10;
+    public float lifeMax = 100;
     public static int luck;
     public float life;
     public int timeToRegen = 3;
