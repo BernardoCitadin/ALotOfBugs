@@ -19,9 +19,11 @@ public class MutationRoll : MonoBehaviour
                     mutation = Mutation.mutation1;
                     break;
                 case 1:
+                /*
                     button_Text.text = "Lag";
                     mutation = Mutation.mutation2;
                     break;
+                */
                 case 2:
                     button_Text.text = "Invisible Player";
                     mutation = Mutation.mutation3;
