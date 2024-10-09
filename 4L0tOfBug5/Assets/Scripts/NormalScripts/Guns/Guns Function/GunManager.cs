@@ -12,7 +12,7 @@ public class GunManager : MonoBehaviour
     [SerializeField] GameObject[] gunPrefabs;
     [SerializeField] Transform player;
 
-    public static GunManager Instance;
+    public static GunManager instance;
     List<Vector2> gunPositions = new List<Vector2>();
 
     [HideInInspector]public int spawnedGuns = 0;
@@ -33,7 +33,7 @@ public class GunManager : MonoBehaviour
         gunPositions.Add(new Vector2(-0.25f, 0.7f));
         gunPositions.Add(new Vector2(0.75f, 0.7f));
 
-        Instance = this;
+        instance = this;
 
     }
     private void Start()

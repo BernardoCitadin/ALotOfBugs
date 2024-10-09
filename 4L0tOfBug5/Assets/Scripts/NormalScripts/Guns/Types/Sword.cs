@@ -13,8 +13,9 @@ public class Sword : Gun
     }
     private void Awake()
     {
-        Aim();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        transform.position = (Vector2)player.position + offset;
+
     }
     private void Update()
     {

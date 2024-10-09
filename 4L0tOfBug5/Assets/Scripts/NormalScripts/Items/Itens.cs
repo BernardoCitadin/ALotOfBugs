@@ -21,7 +21,7 @@ public class Itens : MonoBehaviour
         {
             PlayerStats.Instance.Cost(cost);
             
-            switch (GunManager.Instance.gunChose)
+            switch (GunManager.instance.gunChose)
             {
                 case GunChose.sword:
                     var sword = FindObjectOfType<Sword>();
@@ -58,7 +58,7 @@ public class Itens : MonoBehaviour
         if (PlayerStats.Instance.money >= cost)
         {
             PlayerStats.Instance.Cost(cost);
-            switch (GunManager.Instance.gunChose)
+            switch (GunManager.instance.gunChose)
             {
                 case GunChose.sword:
                     var sword = FindObjectOfType<Sword>();
