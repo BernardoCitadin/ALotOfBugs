@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public abstract class Enemy : MonoBehaviour
     public float damage;
     public Transform _target;
     public Transform EnemyTransform;
+    NavMeshAgent _agent;
 
     public static Enemy Instance;
 
@@ -20,10 +22,7 @@ public abstract class Enemy : MonoBehaviour
         _target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void Movement()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, _target.position, speed * Time.deltaTime);
-    }
+    protected abstract void Movement();
 
     public void TakeDamage(float damage)
     {

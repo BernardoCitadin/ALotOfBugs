@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3280722778214072920}
   - component: {fileID: 3280722778214072927}
   - component: {fileID: 3970575873959424768}
+  - component: {fileID: 4355511450673636931}
   m_Layer: 0
   m_Name: TerrestralBeetleStrong
   m_TagString: Enemy
@@ -174,3 +175,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!195 &4355511450673636931
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280722778214072932}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.65625
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.125
+  m_BaseOffset: 0.5625
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

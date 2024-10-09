@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Beetle : Enemy
+/*public class Beetle : Enemy
 {
     void Start()
     {
@@ -12,3 +12,4 @@ public class Beetle : Enemy
         Movement();
     }
 }
+*/

@@ -50,13 +50,13 @@ public class EnemyManager : MonoBehaviour
         switch (randomSpawners)
         {
             case 0:
-                return randomSpawned = new Vector2(-15, 0);
+                return randomSpawned = new Vector2(-16, 4);
             case 1:
-                return randomSpawned = new Vector2(0, -8);
+                return randomSpawned = new Vector2(-4, -8);
             case 2:
-                return randomSpawned = new Vector2(0, 8);
+                return randomSpawned = new Vector2(4, 8);
             case 3:
-                return randomSpawned = new Vector2(15, 0);
+                return randomSpawned = new Vector2(16, 4);
 
         }
         return randomSpawned;
