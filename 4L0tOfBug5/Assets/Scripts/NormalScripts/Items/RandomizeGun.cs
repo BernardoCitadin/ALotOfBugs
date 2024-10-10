@@ -19,6 +19,8 @@ public class RandomizeGun : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Randomize();
+        CorrectGun();
     }
 
     public void CorrectGun()
@@ -54,7 +56,7 @@ public class RandomizeGun : MonoBehaviour
 
     public void AddGun()
     {
-        if (GunManager.instance.spawnedGuns > 6)
+        if (GunManager.instance.spawnedGuns >= 6)
         {
             //Limite de armas
             return;
