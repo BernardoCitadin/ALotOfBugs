@@ -9,21 +9,26 @@ public abstract class Enemy : MonoBehaviour
     public GameObject xp;
     public float damage;
     public Transform _target;
-    public Transform EnemyTransform;
     NavMeshAgent _agent;
 
     public static Enemy Instance;
 
     public int xpgain;
 
-    private void Awake()
+    public void Awake()
     {
-        Instance = this;
-        _target = GameObject.FindGameObjectWithTag("Player").transform;
+        _target = EnemyManager.Instance.playerPosition;
+        _agent = GetComponent<NavMeshAgent>();
     }
-
-    protected abstract void Movement();
-
+    private void Start()
+    {
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
+    }
+    public void Movement()
+    {
+        _agent.SetDestination(_target.position);    
+    }
     public void TakeDamage(float damage)
     {
         life -= damage;
@@ -33,7 +38,7 @@ public abstract class Enemy : MonoBehaviour
 
             if (Random.Range(0, 100) <= 25)
             {
-                Instantiate(xp, transform.position, transform.rotation);
+                //Instantiate(xp, transform.position, transform.rotation);
             }
             Destroy(gameObject);
         }
