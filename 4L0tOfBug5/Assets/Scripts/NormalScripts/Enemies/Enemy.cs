@@ -36,9 +36,9 @@ public abstract class Enemy : MonoBehaviour
         {
             PlayerStats.GainXp(xpgain);
 
-            if (Random.Range(0, 100) <= 25)
+            if (Random.Range(0, 100) <= 50)
             {
-                //Instantiate(xp, transform.position, transform.rotation);
+                Instantiate(xp, transform.position, transform.rotation);
             }
             Destroy(gameObject);
         }

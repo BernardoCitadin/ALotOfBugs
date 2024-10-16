@@ -81,4 +81,18 @@ public class RandomizeGun : MonoBehaviour
     {
         PlayerStats.Instance.Cost(cost);
     }
+
+    public void Reroll()
+    {
+        int storage = randomGun;
+        if (2 <= PlayerStats.Instance.money)
+        {
+            PlayerStats.Instance.Cost(2);
+            while (randomGun == storage)
+            {
+                Randomize();
+            }
+            CorrectGun();
+        }
+    }
 }
