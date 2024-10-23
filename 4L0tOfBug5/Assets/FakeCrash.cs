@@ -17,12 +17,7 @@ public class FakeCrash : MonoBehaviour
         print(time);
         yield return new WaitForSeconds (time);
         blueScreenImage.enabled = true;
-        StartCoroutine(TimerWhileActivated());
-    }
-    public IEnumerator TimerWhileActivated()
-    {
-        print("easasasasasas");
-        yield return new WaitForSeconds(Random.Range(.1f, 8f));
+        yield return new WaitForSeconds(Random.Range(4f, 8f));
         blueScreenImage.enabled = false;
         StartCoroutine(TimerToActivePanel());
     }
