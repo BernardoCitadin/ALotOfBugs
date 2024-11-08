@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +15,7 @@ public class GunManager : MonoBehaviour
     List<Vector2> gunPositions = new List<Vector2>();
 
     [HideInInspector]public int spawnedGuns = 0;
-    [HideInInspector]public int selectedGun;
+    public int selectedGun;
 
     public GunChose gunChose;
 
@@ -35,10 +34,6 @@ public class GunManager : MonoBehaviour
 
         instance = this;
 
-    }
-    private void Start()
-    {
-        AddGun(selectedGun);
     }
 
     private void Update()
