@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public static HUD instance;
-    public TMP_Text xpTxt, moneyTxt;
+    public TMP_Text xpTxt, moneyTxt, shopMoneyTxt;
     public Image xpBar, lifeBar;
     private void Start()
     {
@@ -33,5 +33,6 @@ public class HUD : MonoBehaviour
     public void SetMoney()
     {
         moneyTxt.text = $"Money: {PlayerStats.Instance.money}";
+        shopMoneyTxt.text = $"Money: {PlayerStats.Instance.money}";
     }
 }

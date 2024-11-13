@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DuplicateSprite : MonoBehaviour
@@ -7,6 +8,12 @@ public class DuplicateSprite : MonoBehaviour
     {
         playerSpRenderer = GetComponent<SpriteRenderer>();
 
+        StartCoroutine(TimerToDuplicateSprite());
+    }
+
+    public IEnumerator TimerToDuplicateSprite()
+    {
+        yield return new WaitForSeconds(3f);
         Instantiate(playerSpRenderer);
     }
 }

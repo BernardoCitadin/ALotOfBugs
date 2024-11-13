@@ -7,7 +7,6 @@ public class Sword : Gun
     public Animator anim;
     protected override void Shoot()
     {
-        print("bangbang");
         swordAudios[0].Play();
         anim.SetBool("Attacking", true);
     }
