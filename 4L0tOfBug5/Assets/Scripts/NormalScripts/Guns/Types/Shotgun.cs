@@ -11,6 +11,7 @@ public class Shotgun : Gun
 
     public AudioSource[] shotgunAudios = new AudioSource[0];
 
+
     //public SpriteRenderer spg;
 
     void Start()
@@ -50,8 +51,11 @@ public class Shotgun : Gun
         Destroy(muzzleGo, 0.05f);
 
         var projectileGo = Instantiate(projectile, muzzlePosition[0].position, transform.rotation, bullets);
+        projectileGo.GetComponent<Bullet>().damage = damage;
         var projectileGo1 = Instantiate(projectile, muzzlePosition[1].position, transform.rotation, bullets);
+        projectileGo1.GetComponent<Bullet>().damage = damage;
         var projectileGo2 = Instantiate(projectile, muzzlePosition[2].position, transform.rotation, bullets);
+        projectileGo2.GetComponent<Bullet>().damage = damage;
 
         Destroy(projectileGo, 0.3f);
         Destroy(projectileGo1, 0.3f);

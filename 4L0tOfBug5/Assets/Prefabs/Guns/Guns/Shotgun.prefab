@@ -258,7 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f505d08c439bf4394fc69581740996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   player: {fileID: 0}
+  damage: 2
   fireDistance: 4.69
   fireRate: 1
   offset: {x: 0, y: 0}

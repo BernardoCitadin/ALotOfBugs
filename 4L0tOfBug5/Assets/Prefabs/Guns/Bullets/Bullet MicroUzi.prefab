@@ -51,6 +51,7 @@ MonoBehaviour:
   damage: 0.5
   speed: 20
   IsMelee: 0
+  IsPrenetating: 0
 --- !u!212 &9105152343548308813
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -190,7 +191,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1740172363
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Time: 0.05
   m_Parameters:

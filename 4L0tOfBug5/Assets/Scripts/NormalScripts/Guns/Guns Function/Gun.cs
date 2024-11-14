@@ -1,12 +1,23 @@
 using UnityEngine;
 
+public enum GunType
+{
+    Pistol, Shotgun, MicroUzi, Sniper, Sword, Lance
+}
+
 public abstract class Gun : MonoBehaviour
 {
+
+    [Header("GunType")]
+    public GunType type;
+
+    [Header("Player")]
     public Transform player;
 
     [Header("Fire Settings")]
-    [SerializeField] public float fireDistance;
-    [SerializeField] public float fireRate;
+    public float damage;
+    public float fireDistance;
+    public float fireRate;
 
     public Vector2 offset;
 
@@ -22,6 +33,9 @@ public abstract class Gun : MonoBehaviour
     [SerializeField] bool isMelee;
     
     public SpriteRenderer gunSprite;
+
+    
+
     private void Awake()
     {
         Instance = this;

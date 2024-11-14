@@ -9,6 +9,7 @@ public class Pistol : Gun
     [SerializeField]public GameObject projectile;
     [SerializeField] Transform bullets;
 
+
     public AudioSource[] pistolAudios = new AudioSource[0];
 
     public static Pistol instance;
@@ -55,6 +56,7 @@ public class Pistol : Gun
         Destroy(muzzleGo, 0.05f);
 
         var projectileGo = Instantiate(projectile, muzzlePosition.position, transform.rotation, bullets);
+        projectileGo.GetComponent<Bullet>().damage = damage;
         Destroy(projectileGo, 3);
     }
 }

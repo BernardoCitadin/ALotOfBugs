@@ -10,6 +10,7 @@ public class GunManager : MonoBehaviour
 {
     [SerializeField] GameObject[] gunPrefabs;
     [SerializeField] Transform player;
+    [SerializeField] Transform gunsTransform;
 
     public static GunManager instance;
     List<Vector2> gunPositions = new List<Vector2>();
@@ -22,6 +23,8 @@ public class GunManager : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        gunsTransform = player.GetChild(4);
+        print(gunsTransform);
 
         gunPositions.Add(new Vector2 (1f, 0f));
         gunPositions.Add(new Vector2 (-1f, 0f));
@@ -66,11 +69,15 @@ public class GunManager : MonoBehaviour
 
     public void AddGun(int gun)
     {
+        if (spawnedGuns >= gunPositions.Count)
+        {
+            return;
+        }
         var pos = gunPositions[spawnedGuns];
 
         var newGun = Instantiate(gunPrefabs[gun], pos, Quaternion.identity);
 
-        newGun.transform.SetParent(player);
+        newGun.transform.SetParent(gunsTransform);
 
         if (newGun.GetComponent<Pistol>() != null)
         {

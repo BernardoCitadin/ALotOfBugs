@@ -5,6 +5,8 @@ public class Sword : Gun
     public AudioSource[] swordAudios = new AudioSource[0];
     [Header("Animator")]
     public Animator anim;
+
+
     protected override void Shoot()
     {
         swordAudios[0].Play();

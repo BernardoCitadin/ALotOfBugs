@@ -78,7 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dfbd34e592636448673ed636944f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
   player: {fileID: 0}
+  damage: 15
   fireDistance: 50
   fireRate: 3
   offset: {x: 0, y: 0}
