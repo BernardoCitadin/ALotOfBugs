@@ -21,6 +21,14 @@ public class MutationRoll : MonoBehaviour
     public Button1 mutationButton1;
     public Button2 mutationButton2;
     public Button3 mutationButton3;
+
+    MutationsManager mutationsManager;
+
+    private void Start()
+    {
+        mutationsManager = FindObjectOfType<MutationsManager>();
+    }
+
     public void RandomizeButtons()
     {
         int m = Random.Range(0, MutationsManager.Instance.Mutations.Length);
@@ -120,19 +128,59 @@ public class MutationRoll : MonoBehaviour
             switch (mutationButton1)
             {
                 case Button1.mutation1:
-                    MutationsManager.Instance.Mutations[0].SetActive(true);
+                    if (mutationsManager.mutation1)
+                    {
+                        MutationsManager.Instance.Mutations[0].SetActive(false);
+                        mutationsManager.mutation1 = false;
+                    }
+                    else
+                    {
+                        MutationsManager.Instance.Mutations[0].SetActive(true);
+                        mutationsManager.mutation1 = true;
+                    }
                 break;
 
                 case Button1.mutation2:
+                if (mutationsManager.mutation2)
+                {
+                    MutationsManager.Instance.Mutations[1].SetActive(false);
+                    mutationsManager.mutation2 = false;
+                }
+                else
+                {
                     MutationsManager.Instance.Mutations[1].SetActive(true);
+                    mutationsManager.mutation2 = true;
+                }
                 break;
 
                 case Button1.mutation3:
+
+                if (mutationsManager.mutation3)
+                {
+                    MutationsManager.Instance.Mutations[2].SetActive(false);
+                    mutationsManager.mutation3 = false;
+                }
+                else
+                {
                     MutationsManager.Instance.Mutations[2].SetActive(true);
+                    mutationsManager.mutation3 = true;
+                }
+
                 break;
                 
                 case Button1.mutation4:
+
+                if (mutationsManager.mutation4)
+                {
+                    MutationsManager.Instance.Mutations[3].SetActive(false);
+                    mutationsManager.mutation4 = false;
+                }
+                else
+                {
                     MutationsManager.Instance.Mutations[3].SetActive(true);
+                    mutationsManager.mutation4 = true;
+                }
+
                 break;
                 /*
                 case Mutation.mutation5:

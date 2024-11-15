@@ -7,6 +7,12 @@ public class MutationsManager : MonoBehaviour
     public GameObject[] Mutations;
     public UnityEvent RefreshAll;
     public GameObject mutations, shop;
+
+    public bool mutation1;
+    public bool mutation2;
+    public bool mutation3;
+    public bool mutation4;
+
     void Awake()
     {
         Instance = this;
