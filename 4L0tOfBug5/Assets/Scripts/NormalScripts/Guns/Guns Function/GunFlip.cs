@@ -11,8 +11,5 @@ public class GunFlip : MonoBehaviour
         spg.GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
-    {
-        
-    }
+    //abobora
 }

@@ -112,7 +112,7 @@ public class PlayerStats : MonoBehaviour
     {       
         money -= cost;
         HUD.instance.SetMoney();
-
+        //ABOBORA
     }
     public float GetLife()
     {

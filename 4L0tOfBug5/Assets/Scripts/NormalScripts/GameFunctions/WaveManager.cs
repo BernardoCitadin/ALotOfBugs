@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
 
     bool waveRunning = true;
     int currentWave = 0;
-    int currentWaveTime;
+    public int currentWaveTime;
 
     private void Awake()
     {
@@ -45,6 +45,7 @@ public class WaveManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             currentWaveTime--;
+            
 
             timeText.text = currentWaveTime.ToString();
 

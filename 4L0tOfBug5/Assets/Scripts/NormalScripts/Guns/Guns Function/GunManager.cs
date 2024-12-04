@@ -24,7 +24,6 @@ public class GunManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         gunsTransform = player.GetChild(4);
-        print(gunsTransform);
 
         gunPositions.Add(new Vector2 (1f, 0f));
         gunPositions.Add(new Vector2 (-1f, 0f));
@@ -36,7 +35,6 @@ public class GunManager : MonoBehaviour
         gunPositions.Add(new Vector2(0.75f, 0.7f));
 
         instance = this;
-
     }
 
     private void Update()
